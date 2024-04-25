@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Store</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+   body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     color: orange;
+     background-color: black;
+   }
+   
+   header {
+     background-color: #333;
+     color: white;
+     padding: 10px 0;
+     text-align: center;
+   }
+
+   
+
+   .cart-number-container {
+     position: absolute;
+     top: -10px;
+     right: -10px;
+     background-color: red;
+     color: white;
+     border-radius: 50%;
+     padding: 5px 8px;
+     font-size: 0.8em;
+   }
+
+   .cart-number-container.hide {
+     display: none;
+   }
+
+   main {
+     padding: 20px;
+   }
+
+   /* Styles for the category divs */
+   .category {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  height: 200px; /* Set the height to match the item displays */
+  position: relative;
+  text-align: center;
+  align-items: center;
+  background-color: #f5a623;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+   .category::before {
+     content: '';
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+     border-radius: 5px;
+   }
+
+   .category span {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: white;
+     font-weight: bold;
+     text-transform: uppercase;
+     text-align: center;
+     width: 100%;
+     z-index: 1;
+   }
+
+   .category:hover {
+     background-color: #555;
+   }
+
+   /* Styles for the product list */
+   .product-list {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     gap: 20px;
+   }
+
+   .card {
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     overflow: hidden;
+   }
+
+   .img-content {
+     height: 200px;
+     overflow: hidden;
+   }
+
+   img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+
+   .card-content {
+     padding: 10px;
+   }
+
+   .card-price {
+     font-weight: bold;
+   }
+
+   .card-title {
+     margin: 10px 0;
+   }
+
+   .btn-container {
+     text-align: center;
+   }
+
+   .card-btn {
+     background-color: #333;
+     color: white;
+     border: none;
+     padding: 5px 10px;
+     cursor: pointer;
+   }
+
+   /* Styles for the modal */
+   .modal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 999;
+   }
+
+   .modal.hide {
+     display: none;
+   }
+
+   .modal-content {
+     background-color: white;
+     padding: 20px;
+     border-radius: 5px;
+   }
+
+   .fa-xmark {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     cursor: pointer;
+   }
+
+   /* New CSS for enhancements */
+   /* Update font and colors */
+   body {
+     font-family: 'Roboto', sans-serif;
+     color: #333;
+     background-color: #f8f8f8;
+   }
+
+   /* Update header styles */
+   header {
+     background-color: #333;
+     color: white;
+     padding: 10px 0;
+     text-align: center;
+   }
+
+   /* Update cart styles */
+   .cart-container {
+     position: relative;
+     color: white;
+   }
+
+  
+ 
+  .card {
+  display: inline-block;
+  width: 200px; 
+  height: 300px; 
+  margin: 10px; 
+  border: 1px solid #ddd; 
+}
+
+   .modal {
+     background-color: rgba(0, 0, 0, 0.7);
+   }
+
+   .card-btn {
+     background-color: #333;
+     color: white;
+     border: none;
+     padding: 8px 16px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+   }
+
+   .card-btn:hover {
+     background-color: #555;
+   }
+
+ /* General styles */
+body {
+  color: orange;
+  background-color: black;
+}
+
+button {
+  color: black;
+  background-color: orange;
+  height: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Checkout button */
+#checkout {
+  background-color: #f5a623;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#checkout:hover {
+  background-color: #f38d0d;
+}
+.specialties {
+  background-color: #f5a623;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: -220px;
+  margin-left: 30px;
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  opacity: 0.8;
+  z-index: 1; /* Ensure the specialties div is above the card */
+  transition: margin-top 0.3s ease; /* Add a transition for smoother appearance */
+}
+
+.card:hover .specialties {
+  margin-top: -240px; /* Adjust the margin to fully display the specialties div */
+}
+
+.card {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  position: relative; /* Add position relative to the card */
+}
+
+.card-content {
+  position: relative; /* Add position relative to the card content */
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fa-xmark {
+  color: #333;
+  cursor: pointer;
+}
+
+/* Cart */
+.cart-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-title {
+  font-weight: bold;
+}
+
+.cart-quantity {
+  margin: 0 10px;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.cart-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cart-buttons button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.cart-buttons button:hover {
+  background-color: #555;
+}
+
+.cart-btn {
+  background-color: #333;
+  color: orange;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #555;
+}
+
+.cart-has-items {
+  background-color: #f5a623; 
+  color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: auto;
+  height: auto;
+}
+
+.img-content {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.img-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-price {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #888;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 10px;
+}
+.card {
+  position: relative; /* Add this to make the tooltip position relative to the card */
+}
+
+.card::after {
+  content: attr(data-specialties); /* Display the specialties */
+  position: absolute;
+  bottom: -30px; /* Position the tooltip below the card */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0; /* Hide the tooltip by default */
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+.card-btn {
+  background-color: #ff8400;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.card-desc {
+  display: none;}
+.card-btn:hover {
+  background-color: #db6e15;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.category:hover::after {
+     content: attr(data-count);
+     position: top;
+     top: 50%;
+     left: 50%;
+     transform: translate(-5%, -5%);
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+     padding: 5px 10px;
+     border-radius: 5px;
+     font-size: 12px;
+   }
+.category img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.category span {
+  font-weight: bold;
+}
+.specialties {
+  background-color: #f5a623;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 100%; /* Make the specialties div fill the entire card */
+}
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Online Store</h1>
+  <button id="show-cart-btn">Show Cart</button>
+<div class="modal hide">
+  <div class="modal-content">
+    <span class="fa fa-xmark"></span>
+    <h2>Shopping Cart</h2>
+    <ul id="cart-list" class="cart-list"></ul>
+    <div id="cart-total" class="cart-total"></div>
+    <div class="cart-buttons">
+      <button id="checkout" onclick="checkout()">Buy</button>
+      <button id="close-cart-btn">Close</button>
+    </div>
+  </div>
+</div>
+  </div>
+</header>
+<main>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+  
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/08/whey-fusion-1-scaled.jpg?resize=1536%2C480&ssl=1" alt="idk">
+        <div class="carousel-caption">
+         
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/08/METABOLIC-CREATINE-1-scaled.jpg?resize=1536%2C480&ssl=1" alt="idk">
+        <div class="carousel-caption">
+        
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/08/Combination-Render-Left-2.png?resize=1536%2C480&ssl=1"alt="idk">
+        <div class="carousel-caption">
+         
+        </div>
+      </div>
+    </div>
+  
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div id="categories"></div>
+  <div id="list" class="product-list"></div>
+</main>
+
+</div>
+<script>
+let allProducts = [
+  {
+    id: 1,
+    title: "Aminu",
+    category: "AMINO RECOVERY",
+    price: 32.99,
+    image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/06/ROC936-B-copy-1.png?resize=247%2C247&ssl=1"
+  },
+  {
+    id: 2,
+    title: "Whey Fuzion",
+    category: "PROTEIN POWDER",
+    price: 65.99,
+    image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/06/48-2.png?resize=247%2C247&ssl=1"
+  },
+  {
+    id: 3,
+    title: "Isoblend",
+    category: "CREATINE",
+    price: 84.99,
+    image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2016/07/52-1.png?fit=1299%2C1299&ssl=1"
+    ,    specialties: "High Quality, Great Taste"
+
+  },
+  {
+    id: 4,
+    title: "Postkem Strawberry Kiwi",
+    category: "GAINERS",
+    price: 49.99,
+    image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/06/Postkem_StrawberryKiwi_Front.png?resize=247%2C247&ssl=1"
+    ,specialties: "High Quality, Great Taste"
+
+  },
+  {
+    id: 5,
+    title: "Energy Drink",
+    category: "PRE WORKOUT",
+    price: 39.99,
+    image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/02/58.png?resize=247%2C247&ssl=1"
+  },
+  {
+    id: 6,
+    title: "Protein Bar",
+    category: "PRE WORKOUT",
+    price: 74.99,
+    image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/03/2.png?resize=247%2C247&ssl=1"
+  }
+,
+  {
+    id: 7,
+    title: "Awesome Power",
+    category: "CREATINE",
+    price: 89.99,
+    image: "https://awesomesupplements.co.uk/cdn/shop/files/Power-Web-1_660x660_crop_center.png?v=1704879979"
+  }
+  ,
+  {
+    id: 8,
+    title: "Pure Power",
+    category: "PROTEIN POWDER",
+    price: 65.99,
+    image: "https://i0.wp.com/purepowernutrition.com/wp-content/uploads/2022/08/Lean-SD_1024x1024@2x.webp?fit=1500%2C1500&ssl=1"
+  }
+];
+
+let cart = []; // Assuming this is declared in a global scope
+
+function displayItems(Item) {
+  const list = document.querySelector("#list");
+  list.innerHTML = allProducts
+    .map((product) => {
+      const { image, category, price, title, id } = product;
+      return `
+      <div class="card" style="display: inline-block;">
+          <div class="img-content">
+            <img src=${product.image} alt=${product.category} style="width: 200px ;height : 200px" />
+      </div>          
+          <div class="card-content">
+            <p class="card-price">$${price.toFixed(2)}</p>
+            <h4 class="card-title">${title.substring(0, 45)}</h4>
+            <p class="card-desc hide">${category.toUpperCase()}</p> 
+            <div class="btn-container">
+              <button class="card-btn" onclick="addToCart(${id})">Add to Cart</button>
+            </div>
+          </div>
+        </div>`;
+    })
+    .join("");
+}
+function displayCart() {
+  const cartList = document.querySelector("#cart-list");
+  cartList.innerHTML = cart
+    .map((item) => {
+      return `
+        <li class="item-container">
+          <p class="cart-title">${item.title}</p>
+          <div class="cart-quantity-container">
+            <span>Quantity:</span>
+            <button class="minus" onclick="decrement(${item.id})">-</button>
+            <span>${item.quantity}</span>
+            <button class="plus" onclick="increment(${item.id})">+</button>
+          </div>
+          <div class="button-quantity-container">
+            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+            <div class="remove-cart-item"><button onclick="removeFromCart(${item.id})">Remove</button></div>
+          </div>
+        </li>`;
+    })
+    .join("");
+  updateTotal();
+}
+
+function displayCategories(categories) {
+  const categoriesDiv = document.querySelector("#categories");
+  categoriesDiv.innerHTML = categories
+    .map((category) => {
+      return `
+        <div class="category" data-category="${category.name}">
+          <img src="${category.image}" alt="${category.name}" />
+          <span>${category.name}</span>
+        </div>`;
+    })
+    .join("");
+
+  const categoryDivs = document.querySelectorAll(".category");
+  categoryDivs.forEach((div) => {
+    div.addEventListener("click", () => {
+      const category = div.dataset.category;
+      const filteredProducts = allProducts.filter((product) => product.category === category);
+      displayProducts(filteredProducts);
+    });
+  });
+}
+
+function openCart() {
+    const cartBtn = document.querySelector("#show-cart-btn"); // Select the "Show Cart" button
+    cartBtn.addEventListener("click", seeModal); // Add click event listener to show the modal
+    shoppingCart(); // Update the cart count
+    displayCart(); // Display cart items
+  }
+  function displayItems(items) {
+  const list = document.querySelector("#list");
+  list.innerHTML = ''; // Clear previous items
+
+  items.forEach((product) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.dataset.specialties = product.specialties;
+
+    const imgContent = document.createElement('div');
+    imgContent.classList.add('img-content');
+    const img = document.createElement('img');
+    img.src = product.image;
+    img.alt = product.category;
+    img.style.width = '200px';
+    img.style.height = '200px';
+    imgContent.appendChild(img);
+    card.appendChild(imgContent);
+
+    const cardContent = document.createElement('div');
+    cardContent.classList.add('card-content');
+    const price = document.createElement('p');
+    price.classList.add('card-price');
+    price.textContent = `$${product.price.toFixed(2)}`;
+    const title = document.createElement('h4');
+    title.classList.add('card-title');
+    title.textContent = product.title.substring(0, 45);
+    const category = document.createElement('p');
+    category.classList.add('card-desc', 'hide');
+    category.textContent = product.category.toUpperCase();
+    const specialties = document.createElement('div');
+    specialties.classList.add('specialties', 'hide');
+    specialties.textContent = `Specialties: ${product.specialties}`;
+    const btnContainer = document.createElement('div');
+    btnContainer.classList.add('btn-container');
+    const btn = document.createElement('button');
+    btn.classList.add('card-btn');
+    btn.textContent = 'Add to Cart';
+    btn.onclick = () => addToCart(product.id);
+    btnContainer.appendChild(btn);
+    cardContent.appendChild(price);
+    cardContent.appendChild(title);
+    cardContent.appendChild(category);
+    cardContent.appendChild(specialties);
+    cardContent.appendChild(btnContainer);
+    card.appendChild(cardContent);
+
+    card.addEventListener('mouseover', () => {
+      specialties.classList.remove('hide');
+    });
+
+    card.addEventListener('mouseout', () => {
+      specialties.classList.add('hide');
+    });
+
+    list.appendChild(card);
+  });
+}
+
+
+displayItems(allProducts);
+
+let categories = [
+  {
+    name: "PROTEIN POWDER",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkGyIRexXNjRMYl01HUh8bp4FzwyZ5GxAldn-0nlbIQg&s"
+  },
+  {
+    name: "CREATINE",
+    image: "https://static.independent.co.uk/2023/12/27/15/Creatine-hero.png?width=1200&"
+  },
+  {
+    name: "GAINERS",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjiyiK06XunBQjbzUH-rIWARD6xelNvw7bLXCwuIbbiCUNXeKxHd25Udc6bSWP3vw5Cu8&usqp=CAU"
+  },
+  {
+    name: "PRE WORKOUT",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZeLimx3sQXAwEc-Ti_fC_9V9ESpVduFBySloMDJYPaw&s"
+  },
+  {
+    name: "AMINO RECOVERY",
+    image: "https://www.geneticnutrition.in/cdn/shop/products/ultra-eaa-essential-amino-acids-121697_1200x.jpg?v=1693325006"
+  }
+];
+
+function filterCategories() {
+  const select = document.querySelector("#filter-btn");
+  select.addEventListener("change", filterProducts);
+
+  function filterProducts(e) {
+    let list = document.querySelector("#list");
+    let content;
+    let option = e.target.value;
+    let selectedCategory = document.querySelector("#selected-category");
+
+    if (option === "All") {
+      content = displayItems(Item);
+      list.innerHTML = content;
+      selectedCategory.innerHTML = `All Categories`;
+    } else {
+      let filteredProducts = Item.filter((product) => product.category === option);
+      content = displayItems(filteredProducts);
+      list.innerHTML = content;
+      selectedCategory.innerHTML = `${option}`;
+    }
+  }
+}
+
+function addToCart(id) {
+  const item = allProducts.find((product) => product.id === id);
+  const existingItem = cart.find((cartItem) => cartItem.id === id);
+
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cart.push({ ...item, quantity: 1 });
+  }
+
+  displayCart();
+  shoppingCart();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter((item) => item.id !== id);
+  displayCart();
+  shoppingCart();
+}
+
+function increment(id) {
+  const item = cart.find((item) => item.id === id);
+  item.quantity++;
+  displayCart();
+  shoppingCart();
+}
+
+function decrement(id) {
+  const item = cart.find((item) => item.id === id);
+  if (item.quantity === 1) {
+    removeFromCart(id);
+  } else {
+    item.quantity--;
+    displayCart();
+    shoppingCart();
+  }
+}
+
+function updateTotal() {
+  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const totalElement = document.querySelector("#cart-total");
+  totalElement.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+function shoppingCart() {
+  const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const cartBtn = document.querySelector("#show-cart-btn");
+  if (cartCount === 0) {
+    cartBtn.textContent = "Show Cart";
+    cartBtn.classList.remove("cart-has-items");
+  } else {
+    cartBtn.textContent = `Show Cart (${cartCount})`;
+    cartBtn.classList.add("cart-has-items");
+  }
+}
+
+
+function seeModal() {
+  const modal = document.querySelector(".modal");
+  const closeModal = document.querySelector(".fa.fa-xmark");
+  const closeBtn = document.querySelector("#close-cart-btn");
+  modal.classList.remove("hide");
+  closeModal.addEventListener("click", hideModal);
+  closeBtn.addEventListener("click", hideModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      hideModal();
+    }
+  });
+}
+
+function hideModal() {
+  const modal = document.querySelector(".modal");
+  modal.classList.add("hide");
+}
+// Function to handle the checkout/buy button click
+function checkout() {
+  const cartList = document.querySelector("#cart-list");
+  cartList.innerHTML = `<p>Your order will be delivered to you soon!</p>`;
+  updateTotal(); // Update the total (optional, if needed)
+  shoppingCart(); // Update the cart count
+  cart = [];
+}
+function displayCategoryCounts() {
+  const categories = document.querySelectorAll('.category');
+  categories.forEach(category => {
+    const categoryName = category.dataset.category;
+    const productCount = allProducts.filter(product => product.category === categoryName).length;
+    category.dataset.count = productCount + " products";  });
+}
+
+// Call the function when the page is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  displayCategoryCounts();
+
+  // Update counts when hovering over categories
+  document.querySelectorAll('.category').forEach(category => {
+    category.addEventListener('mouseover', displayCategoryCounts);
+  });
+});
+// Event listener for the close button
+document.querySelector("#close-cart-btn").addEventListener("click", hideModal);
+displayItems(allProducts);
+displayCategories(categories);
+openCart();
+</script>
+</body>
+</html>
