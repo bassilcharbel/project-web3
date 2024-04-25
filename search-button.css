@@ -1,0 +1,26 @@
+.search{
+    display: flex ;
+    align-items: center;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: #f6f6f6;
+    transition: box-shadow 0.25s;
+}
+.search:focus-within{
+    box-shadow: 0 0 2px  rgb(0,0,0,1);
+}
+
+.search-bar{
+    outline: none;
+    border: none;
+    margin-left: 15px;
+    background : transparent;
+    font-size: 18px;
+    font-family: 'Lexend' , sans-serif ;
+    color : #444444; 
+    width: 300px;
+}
+
+.search-bar::placeholder,.search-icon{
+    color:rgb(0,0,0,0.5);
+}
