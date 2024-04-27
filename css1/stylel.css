@@ -3,6 +3,7 @@
     padding:0;
     box-sizing:border-box;
 }
+/*testimonial*/
 #about-us{
     padding:80 0;
 
@@ -61,16 +62,18 @@
     display:flex;
     justify-content:space-between;
   }
-
+/*social media */
 .sicons a {
   color:#EEEEEE;
 
 }
+/*external links*/
 .footer a{
   text-decoration:none;
   color:#EEEEEE;
   margin:35;
 }
+/*social media*/
 .social{
   color:#EEEEEE;
   margin:35px;
@@ -163,6 +166,7 @@ body{
 }
 
 */
+/*cards*/
 .containers{
     height:10vh;
     display:flex;
