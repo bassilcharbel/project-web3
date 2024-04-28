@@ -1,3 +1,500 @@
+/*mohamad*/
+.navbar{
+    background-color: #DC5F00;
+}
+.nav-item:hover{
+    background-color: #000000;
+}
+/*kevin*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: orange;
+    background-color: black ;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  
+
+  .cart-number-container {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 0.8em;
+  }
+
+  .cart-number-container.hide {
+    display: none;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  /* Styles for the category divs */
+  .category {
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ border-radius: 5px;
+ cursor: pointer;
+ display: inline-block;
+ height: 200px; /* Set the height to match the item displays */
+ position: relative;
+ text-align: center;
+ align-items: center;
+ background-color: #f5a623;
+ color: white;
+ padding: 10px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ margin-left: 20px;
+ border-radius: 5px;
+ cursor: pointer;
+ width: 200px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+ transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+  .category::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    border-radius: 5px;
+  }
+
+  .category span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .category:hover {
+    background-color: #555;
+  }
+
+  /* Styles for the product list */
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .img-content {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-price {
+    font-weight: bold;
+  }
+
+  .card-title {
+    margin: 10px 0;
+  }
+
+  .btn-container {
+    text-align: center;
+  }
+
+  .card-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  /* Styles for the modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal.hide {
+    display: none;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .fa-xmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  /* New CSS for enhancements */
+  /* Update font and colors */
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+  }
+
+  /* Update header styles */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* Update cart styles */
+  .cart-container {
+    position: relative;
+    color: white;
+  }
+
+ 
+
+ .card {
+ display: inline-block;
+ width: 200px; 
+ height: 300px; 
+ margin: 10px; 
+ border: 1px solid #ddd; 
+}
+
+  .modal {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .card-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-btn:hover {
+    background-color: #555;
+  }
+
+/* General styles */
+body {
+ color: orange;
+ background-color: black;
+}
+
+button {
+ color: black;
+ background-color: orange;
+ height: 30px;
+}
+
+h2 {
+ text-align: center;
+}
+
+/* Checkout button */
+#checkout {
+ background-color: #f5a623;
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ margin-top: 20px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+}
+
+#checkout:hover {
+ background-color: #f38d0d;
+}
+.specialties {
+ background-color: #f5a623;
+ color: white;
+ padding: 10px;
+ border-radius: 5px;
+ margin-top: -220px;
+ margin-left: 30px;
+ position: absolute;
+ width: 200px;
+ height: 300px;
+ text-align: center;
+ opacity: 0.8;
+ z-index: 1; /* Ensure the specialties div is above the card */
+ transition: margin-top 0.3s ease; /* Add a transition for smoother appearance */
+}
+
+.card:hover .specialties {
+ margin-top: -240px; /* Adjust the margin to fully display the specialties div */
+}
+
+.card {
+ display: inline-block;
+ width: 200px;
+ height: 300px;
+ margin: 10px;
+ border: 1px solid #ddd;
+ position: relative; /* Add position relative to the card */
+}
+
+.card-content {
+ position: relative; /* Add position relative to the card content */
+}
+
+/* Modal */
+.modal {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.7);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 999;
+}
+
+.modal-content {
+ background-color: #fff;
+ color: #333;
+ padding: 20px;
+ border-radius: 5px;
+ width: 80%;
+ max-width: 400px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fa-xmark {
+ color: #333;
+ cursor: pointer;
+}
+
+/* Cart */
+.cart-list {
+ list-style-type: none;
+ padding: 0;
+}
+
+.cart-item {
+ border-bottom: 1px solid #ddd;
+ padding: 10px 0;
+}
+
+.cart-item:last-child {
+ border-bottom: none;
+}
+
+.cart-title {
+ font-weight: bold;
+}
+
+.cart-quantity {
+ margin: 0 10px;
+}
+
+.cart-total {
+ font-weight: bold;
+ margin-top: 20px;
+ text-align: right;
+}
+
+.cart-buttons {
+ margin-top: 20px;
+ text-align: center;
+}
+
+.cart-buttons button {
+ background-color: #333;
+ color: #fff;
+ border: none;
+ padding: 5px 10px;
+ cursor: pointer;
+ margin-right: 10px;
+}
+
+.cart-buttons button:hover {
+ background-color: #555;
+}
+
+.cart-btn {
+ background-color: #333;
+ color: orange;
+ border: none;
+ padding: 5px 10px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+ background-color: #555;
+}
+
+.cart-has-items {
+ background-color: #f5a623; 
+ color: white;
+}
+
+.card {
+ display: flex;
+ flex-direction: column;
+ background-color: #000000;
+ margin-bottom: 20px;
+ padding: 10px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ width: auto;
+ height: auto;
+}
+
+.img-content {
+ text-align: center;
+ margin-bottom: 10px;
+}
+
+.img-content img {
+ max-width: 100%;
+ height: auto;
+}
+
+.card-content {
+ flex: 1;
+}
+
+.card-price {
+ color: #333;
+ font-size: 18px;
+ font-weight: bold;
+ margin-bottom: 5px;
+}
+
+.card-title {
+ font-size: 16px;
+ margin-bottom: 5px;
+}
+
+.card-desc {
+ font-size: 14px;
+ color: #888;
+}
+
+.btn-container {
+ text-align: center;
+ margin-top: 10px;
+}
+.card {
+ position: relative; /* Add this to make the tooltip position relative to the card */
+}
+
+.card::after {
+ content: attr(data-specialties); /* Display the specialties */
+ position: absolute;
+ bottom: -30px; /* Position the tooltip below the card */
+ left: 50%; /* Center the tooltip horizontally */
+ transform: translateX(-50%);
+ background-color: #333;
+ color: white;
+ padding: 5px 10px;
+ border-radius: 5px;
+ font-size: 12px;
+ opacity: 0; /* Hide the tooltip by default */
+ transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+ opacity: 1; /* Show the tooltip on hover */
+}
+
+.card-btn {
+ background-color: #ff8400;
+ color: rgb(0, 0, 0);
+ border: none;
+ padding: 5px 10px;
+ cursor: pointer;
+}
+.card-desc {
+ display: none;}
+.card-btn:hover {
+ background-color: #db6e15;
+ box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+ transform: translateY(-1px);
+}
+
+.category:hover::after {
+    content: attr(data-count);
+    position: top;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -5%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+.category img {
+ max-width: 100%;
+ height: 100%;
+ border-radius: 5px;
+ margin-bottom: 5px;
+}
+
+.category span {
+ font-weight: bold;
+}
+.specialties {
+ background-color: #f5a623;
+ color: white;
+ padding: 10px;
+ border-radius: 5px;
+ margin-top: 10px;
+ height: 100%; /* Make the specialties div fill the entire card */
+}
 *{
     margin:0;
     padding:0;
@@ -24,7 +521,7 @@
     display:block;
     content:"";
     width:65px;
-    height:3px;
+    height:3px !important;
     background-color:#000000;
     margin:10px auto;
 }
@@ -52,9 +549,10 @@
     font-size:1em;
 }
 .box img{
-    width:100px;
+    width:200px;
+    height:200px !important;
     margin: 0 auto;
-    margin-top:-100px;
+    margin-top:-50px;
     border:8px solid #000000;
     border-radius:50%;
 }
@@ -78,10 +576,10 @@
   color:#EEEEEE;
   margin:35px;
 }
-.testimonialh{
+/*.testimonialh{
     text-align:center !important;
     color:#DC5F00;
-}
+}*/
 body{
     background-color:#000000;
 }
