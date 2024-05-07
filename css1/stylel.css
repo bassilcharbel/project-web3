@@ -5,6 +5,12 @@
 .nav-item:hover{
     background-color: #000000;
 }
+.navbar-brand{
+  margin-top: -10px;
+  margin-bottom: -10px;
+  height:75px;
+  width:auto;
+}
 /*kevin*/
 body {
     font-family: Arial, sans-serif;
@@ -740,4 +746,31 @@ body{
     color:#EEEE;
     padding:15px;
     margin:10px;
+}
+/*contact*/
+.imgsquat{
+  width:100%;
+  height:600px;
+}
+.atitle{
+  font-size:30px;
+  text-decoration:underline;
+  color:#EEEEEE;
+  padding:20px;
+
+}
+.ainfo{
+  padding:20px;
+}
+.abut-ton{
+  background-color:#DC5F00 ;
+  color:#EEEEEE ;
+
+}
+.abut-ton a{
+  color:#EEEEEE;
+}
+/*about*/
+.atab{
+  padding:50px;
 }
