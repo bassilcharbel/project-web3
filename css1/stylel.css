@@ -773,4 +773,9 @@ body{
 /*about*/
 .atab{
   padding:50px;
+  color:#DC5F00;
+}
+.atabs{
+  padding:20px;
+  color:#EEEEEE;
 }
