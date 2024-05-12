@@ -450,6 +450,7 @@ h2 {
  font-size: 12px;
  opacity: 0; /* Hide the tooltip by default */
  transition: opacity 0.3s ease;
+ display:none;
 }
 
 .card:hover::after {
@@ -478,7 +479,7 @@ h2 {
     left: 50%;
     transform: translate(-5%, -5%);
     background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    color:white;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;

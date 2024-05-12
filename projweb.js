@@ -5,30 +5,32 @@ let allProducts = [
       category: "AMINO RECOVERY",
       price: 32.99,
       image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/06/ROC936-B-copy-1.png?resize=247%2C247&ssl=1"
-    },
+      , specialties:"refuel your energy and enhance your performance"
+    },    
     {
       id: 2,
       title: "Whey Fuzion",
       category: "PROTEIN POWDER",
       price: 65.99,
       image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/06/48-2.png?resize=247%2C247&ssl=1"
+      , specialties:"a perfect balanced blend of Whey Protein Concentrate and Milk Protein Isolate"
     },
     {
       id: 3,
-      title: "Isoblend",
+      title: "Metabolic creatine",
       category: "CREATINE",
       price: 84.99,
-      image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2016/07/52-1.png?fit=1299%2C1299&ssl=1"
-      ,    specialties: "High Quality, Great Taste"
+      image:"https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/07/54.png?fit=1299%2C1299&ssl=1"
+      ,    specialties: "creatine enhence performance during High-intensity interval training"
   
     },
     {
       id: 4,
       title: "Postkem Strawberry Kiwi",
-      category: "GAINERS",
+      category: "AMINO RECOVERY",
       price: 49.99,
       image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/06/Postkem_StrawberryKiwi_Front.png?resize=247%2C247&ssl=1"
-      ,specialties: "High Quality, Great Taste"
+      ,specialties: "Rapid post-workout recovery with PostKem"
   
     },
     {
@@ -37,14 +39,17 @@ let allProducts = [
       category: "PRE WORKOUT",
       price: 39.99,
       image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/02/58.png?resize=247%2C247&ssl=1"
+      ,specialties: "designed to boost energy and enhance performance before exercise"
+  
     },
     {
       id: 6,
-      title: "Protein Bar",
-      category: "PRE WORKOUT",
+      title: "Metabolic Mass",
+      category: "GAINERS",
       price: 74.99,
       image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/03/2.png?resize=247%2C247&ssl=1"
-    }
+      ,specialties: "used to increase calorie intake and promote muscle growth in indiduals who struggle to gain weight through theire regular diet"
+    },
   ,
     {
       id: 7,
@@ -52,7 +57,8 @@ let allProducts = [
       category: "CREATINE",
       price: 89.99,
       image: "https://awesomesupplements.co.uk/cdn/shop/files/Power-Web-1_660x660_crop_center.png?v=1704879979"
-    }
+      ,specialties:"staking beta alanine and creatine offer synergistic benefit that can buffer muscle fatigue, improve mental clarity and focusand improve recovery rates"
+    },
     ,
     {
       id: 8,
@@ -60,7 +66,8 @@ let allProducts = [
       category: "PROTEIN POWDER",
       price: 65.99,
       image: "https://i0.wp.com/purepowernutrition.com/wp-content/uploads/2022/08/Lean-SD_1024x1024@2x.webp?fit=1500%2C1500&ssl=1"
-    }
+      ,specialties:"Protein powder is a supplement that helps individuals meet theire daily protein requirments and support muscle growth"
+    },
   ];
   
   let cart = []; // Assuming this is declared in a global scope
@@ -115,10 +122,11 @@ let allProducts = [
     categoriesDiv.innerHTML = categories
       .map((category) => {
         return `
-          <div class="category" data-category="${category.name}">
+         <div class="category" data-category="${category.name}">
             <img src="${category.image}" alt="${category.name}" />
             <span>${category.name}</span>
           </div>`;
+      
       })
       .join("");
   
