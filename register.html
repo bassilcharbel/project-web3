@@ -54,22 +54,22 @@
         <div class="signup-box">
           <h1>Sign Up</h1>
           <h4>It's free and only takes a minute</h4>
-          <form>
+          <form method="post" action="register.php">
             <label>First Name</label>
-            <input type="text" placeholder="F Namw" required/>
+            <input type="text" placeholder="F Name" name="user" required/>
             <label>Last Name</label>
-            <input type="text" placeholder="L Name"required />
+            <input type="text" placeholder="L Name" name="L name"required />
             <label>Email</label>
-            <input type="email" placeholder="Email"required />
+            <input type="email" placeholder="Email" name="email"required />
             <label>Password</label>
-            <input type="password" placeholder="Password" required />
+            <input type="password" placeholder="Password" name="pass" required />
             <label>Confirm Password</label>
-            <input type="password" placeholder="Password" required />
-            <input type="button" style="background-color: #DC5F00;"value="Submit" />
+            <input type="password" placeholder="Password" name="pass" required />
+            <input type="submit" style="background-color: #DC5F0c; color:#eee;;"value="signup" >
           </form>
           <p>
             By clicking the Sign Up button,you agree to our <br />
-            <a style="color:#eee" href="#">Terms and Condition</a> and <a style="color:#eee"href="#">Policy Privacy</a>
+            <a style="color:#DC5F0c"href="#">Terms and Condition</a> and <a style="color:#DC5F0c"href="#"> Privacy Policy</a>
           </p>
         </div>
         <p class="para-2">
