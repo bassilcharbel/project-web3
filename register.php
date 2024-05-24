@@ -9,14 +9,14 @@ if(isset($_POST['user']) && $_POST['user']!=""
     $pass=$_POST['pass'];
     $Lname=$_POST['Lname'];
      $email=$_POST['email'];
-    $query="Select * From user where user='$user' and password='$pass' and email='$email'and Lname='$Lname'";
+    $query="Select email From user where email='$email'";
     
     $res= mysqli_query($con, $query);
     
     $nbrows= mysqli_num_rows($res);
     if($nbrows== 1)
     {
-       echo"error : user already exists, try another username "; 
+       echo"error : user already exists, try another email "; 
        header("refresh:5;url=register.html");
     }
  else {
