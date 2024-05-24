@@ -50,7 +50,7 @@ let allProducts = [
       image: "https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/03/2.png?resize=247%2C247&ssl=1"
       ,specialties: "used to increase calorie intake and promote muscle growth in indiduals who struggle to gain weight through theire regular diet"
     },
-  ,
+  
     {
       id: 7,
       title: "Awesome Power",
@@ -59,7 +59,7 @@ let allProducts = [
       image: "https://awesomesupplements.co.uk/cdn/shop/files/Power-Web-1_660x660_crop_center.png?v=1704879979"
       ,specialties:"staking beta alanine and creatine offer synergistic benefit that can buffer muscle fatigue, improve mental clarity and focusand improve recovery rates"
     },
-    ,
+    
     {
       id: 8,
       title: "Pure Power",
