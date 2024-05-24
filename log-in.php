@@ -1,12 +1,13 @@
 <?php
 require_once 'connection.php';
-if(isset($_POST['pass']) && $_POST['pass']!=""
-         && isset($_POST['email']) && $_POST['email']!="")   
+if(isset($_POST['email']) && $_POST['email']!=""
+        && isset($_POST['pass']) && $_POST['pass']!="")   
 {
-    $pass=$_POST['pass'];
     $email=$_POST['email'];
+    $pass=$_POST['pass'];
     
-      $query="Select * From user where password='$pass' and email='$email'";
+    $query="Select email, password From user where email='$email' and password='$pass'";
+    
     $res= mysqli_query($con, $query);
     
     $nbrows= mysqli_num_rows($res);
@@ -17,7 +18,7 @@ if(isset($_POST['pass']) && $_POST['pass']!=""
     else if($nbrows==1) {
         session_start();
         $_SESSION['loggedin']=1;
-        $_SESSION['user']=$user;
+        $_SESSION['email']=$email;
         header("Location:index.html");
    }
 }

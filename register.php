@@ -9,7 +9,6 @@ if(isset($_POST['user']) && $_POST['user']!=""
     $pass=$_POST['pass'];
     $Lname=$_POST['Lname'];
      $email=$_POST['email'];
-    
     $query="Select * From user where user='$user' and password='$pass' and email='$email'and Lname='$Lname'";
     
     $res= mysqli_query($con, $query);
