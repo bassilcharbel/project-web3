@@ -5,12 +5,27 @@ if(isset($_POST['user']) && $_POST['user']!=""
          && isset($_POST['Lname']) && $_POST['Lname']!=""
          && isset($_POST['email']) && $_POST['email']!="")   
 {
-    $user=$_POST['user'];
-    $pass=$_POST['pass'];
-    $Lname=$_POST['Lname'];
-     $email=$_POST['email'];
+   function cleanInput($input){
+      $input=trim($input);
+      $input=stripslashes($input);
+      $input=htmlspecialchars($input);
+      return $input;
+   }
+    $user=cleanInput($_POST['user']);
+    $pass=cleanInput($_POST['pass']);
+    $Lname=cleanInput($_POST['Lname']);
+     $email=cleanInput($_POST['email']);
+     $confirm_pass=cleanInput($_POST['confirm_pass']);
+     if ($pass==$confirm_pass){
+      
+     
+
     $query="Select email From user where email='$email'";
-    
+     }
+     else{
+      echo"The password do not match .Pleas try again.";
+     }
+     $query="Select email From user where email='$email'";
     $res= mysqli_query($con, $query);
     
     $nbrows= mysqli_num_rows($res);

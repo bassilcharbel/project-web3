@@ -3,8 +3,16 @@ require_once 'connection.php';
 if(isset($_POST['email']) && $_POST['email']!=""
         && isset($_POST['pass']) && $_POST['pass']!="")   
 {
-    $email=$_POST['email'];
-    $pass=$_POST['pass'];
+    function cleanInput($input){
+        $input=trim($input);
+        $input=stripslashes($input);
+        $input=htmlspecialchars($input);
+        return $input;
+
+    }
+    $email=cleanInput($_POST['email']);
+    $pass=cleanInput($_POST['pass']);
+
     
     $query="Select email, password From user where email='$email' and password='$pass'";
     
