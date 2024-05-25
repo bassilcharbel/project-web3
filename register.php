@@ -21,9 +21,6 @@ if(isset($_POST['user']) && $_POST['user']!=""
          echo "Error: Passwords do not match.";
          header("refresh:5;url=register.html");
          exit();
-      
-    //$query="Select email From user where email='$email'";
-
      }
 
     $query="Select email From user where email='$email'";
