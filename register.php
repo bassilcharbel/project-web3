@@ -2,6 +2,7 @@
 require_once 'connection.php';
 if(isset($_POST['user']) && $_POST['user']!=""
         && isset($_POST['pass']) && $_POST['pass']!=""
+        && isset($_POST['confirm_pass']) && $_POST['confirm_pass']!=""
          && isset($_POST['Lname']) && $_POST['Lname']!=""
          && isset($_POST['email']) && $_POST['email']!="")   
 {
@@ -16,16 +17,17 @@ if(isset($_POST['user']) && $_POST['user']!=""
     $Lname=cleanInput($_POST['Lname']);
      $email=cleanInput($_POST['email']);
      $confirm_pass=cleanInput($_POST['confirm_pass']);
-     if ($pass==$confirm_pass){
+      if ($pass !== $confirm_pass) {
+         echo "Error: Passwords do not match.";
+         header("refresh:5;url=register.html");
+         exit();
       
-     
+    //$query="Select email From user where email='$email'";
+
+     }
 
     $query="Select email From user where email='$email'";
-     }
-     else{
-      echo"The password do not match .Pleas try again.";
-     }
-     $query="Select email From user where email='$email'";
+    
     $res= mysqli_query($con, $query);
     
     $nbrows= mysqli_num_rows($res);
