@@ -26,34 +26,47 @@
   <title>Checkout</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
-</head>
+  <!--font awsome-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <body>
-  <nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="index.php"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Mobile Store</a>
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.php"><i class="fas fa-mobile-alt mr-2"></i>Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">alpha supplements</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">about us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">contact us </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="checkout.php">check out</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bi bi-person-circle"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="log in here">
+          <a class="dropdown-item" href="login.html">log in </a>
+          <a class="dropdown-item" href="register.html">sign up</a>
+          <a class="dropdown-item" href="logout.php">log out</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
   <div class="container">
     <div class="row justify-content-center">

@@ -61,30 +61,6 @@
     </ul>
   </div>
 </nav>
-  <!-- Navbar start -->
-  <!--<nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="index.php">&nbsp;&nbsp;Alpha supplements</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.php"></i>Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger">1</span></a>
-        </li>
-      </ul>
-    </div>
-  </nav>-->
-  <!-- Navbar end -->
   <div style="padding-bottom:50px;"id="myCarousel" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
