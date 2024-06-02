@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once 'config.php';
 if(isset($_POST['email']) && $_POST['email']!=""
         && isset($_POST['pass']) && $_POST['pass']!="")   
 {
@@ -16,7 +16,7 @@ if(isset($_POST['email']) && $_POST['email']!=""
     
     $query="Select email, password From user where email='$email' and password='$pass'";
     
-    $res= mysqli_query($con, $query);
+    $res= mysqli_query($conn, $query);
     
     $nbrows= mysqli_num_rows($res);
     if($nbrows== 0)

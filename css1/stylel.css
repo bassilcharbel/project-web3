@@ -672,7 +672,7 @@ body{
 
 */
 /*cards*/
-.containers{
+.con--tainers{
     height:10vh;
     display:flex;
     align-items:center;
@@ -849,4 +849,7 @@ p {
 }
 .para-2 a {
   color: #DC5F00;
+}
+.carousel slide{
+  margin: 100px !important;
 }

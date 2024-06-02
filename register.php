@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once 'config.php';
 if(isset($_POST['user']) && $_POST['user']!=""
         && isset($_POST['pass']) && $_POST['pass']!=""
         && isset($_POST['confirm_pass']) && $_POST['confirm_pass']!=""
@@ -25,7 +25,7 @@ if(isset($_POST['user']) && $_POST['user']!=""
 
     $query="Select email From user where email='$email'";
     
-    $res= mysqli_query($con, $query);
+    $res= mysqli_query($conn, $query);
     
     $nbrows= mysqli_num_rows($res);
     if($nbrows== 1)
@@ -35,7 +35,7 @@ if(isset($_POST['user']) && $_POST['user']!=""
     }
  else {
     $query2="INSERT INTO `user` (`user`, `password`, `email`, `Lname`) VALUES ('$user', '$pass', '$email',  '$Lname')";   
-    $result2= mysqli_query($con,$query2);
+    $result2= mysqli_query($conn,$query2);
     if(!$result2)
     {
        echo"error registration";
@@ -43,7 +43,7 @@ if(isset($_POST['user']) && $_POST['user']!=""
     }
     else
     {
-    header("location:index.html");    
+    header("location:login.html");    
     }
     
 }

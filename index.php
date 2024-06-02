@@ -3,26 +3,74 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="author" content="Sahil Kumar">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Shopping Cart System</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
-  <link rel='stylesheet' href='./css1/stylel.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!--Script-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--kevin-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='./css1/lateststyle.css'>
+   
 </head>
 
 <body style="background-color: black";>
+<nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">alpha supplements</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">about us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">contact us </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="checkout.php">check out</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bi bi-person-circle"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="log in here">
+          <a class="dropdown-item" href="login.html">log in </a>
+          <a class="dropdown-item" href="register.html">sign up</a>
+          <a class="dropdown-item" href="logout.php">log out</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
   <!-- Navbar start -->
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="index.php"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Mobile Store</a>
+  <!--<nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="index.php">&nbsp;&nbsp;Alpha supplements</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php"><i class="fas fa-mobile-alt mr-2"></i>Products</a>
+          <a class="nav-link active" href="index.php"></i>Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
@@ -35,8 +83,53 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav>-->
   <!-- Navbar end -->
+  <div style="padding-bottom:50px;"id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+            
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/08/whey-fusion-1-scaled.jpg?resize=1536%2C480&ssl=1" alt="idk">
+                  <div class="carousel-caption">
+                   
+                  </div>
+                </div>
+            
+                <div class="item">
+                  <img src="https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/08/METABOLIC-CREATINE-1-scaled.jpg?resize=1536%2C480&ssl=1" alt="idk">
+                  <div class="carousel-caption">
+                  
+                  </div>
+                </div>
+            
+                <div class="item">
+                  <img src="https://i0.wp.com/superiorsupps.com/wp-content/uploads/2023/08/Combination-Render-Left-2.png?resize=1536%2C480&ssl=1"alt="idk">
+                  <div class="carousel-caption">
+                   
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div id="categories"></div>
+            <div id="list" class="product-list"></div>
+
 
   <!-- Displaying Products Start -->
   <div class="container">
@@ -139,6 +232,142 @@
     }
   });
   </script>
+  <!--latest blog-->
+ <<div class="co--ntainers">
+            <h2 class="title">
+                latest blog
+            </h2>
+        </div>
+        <div class="im-age">
+            <img class="image__img" src="./photos/spump.jpg">
+            <div class="image__overlay ">
+                <p class="image__description">
+                    Seeking longer pumps:the role of arginase inhibitors in pre-workouts<br>
+                </p>
+            </div>
+        </div>
+        <div class="im-age">
+            <img class="image__img" src="./photos/orgsupp.jpg">
+            <div class="image__overlay ">
+                <p class="image__description">
+                    The importance of organ support<br>
+                </p>
+            </div>
+        </div>
+        <div class="im-age">
+            <img class="image__img" src="./photos/creatine1.jpg">
+            <div class="image__overlay">
+                <p class="image__description ">
+                    The role of cratine in high-intensity intermittent activities<br>
+                    </p>
+            </div>
+        </div>
+        <div class="im-age">
+            <img class="image__img" src="./photos/recovery1.jpg">
+            <div class="image__overlay">
+                <p class="image__description">
+                  Maximize your recovery following intense strength training<br></p>
+            </div>
+        </div>
+        <!-- latest blog-->
+      <!--<div class="containers">
+        <h2 class="title">
+            latest blog
+        </h2>
+    </div>
+    <div id="card-area">
+        <div class="wrapper">
+            <div class="boxs-area">
+                <div class="boxs">
+                    <img src="prom019.jpg">
+                    <div class="overlay">
+                        <h3> The importance of organ support</h3>
+                        <p> </p>
+                        <a href="#">read more</a>
+
+                    </div>
+                </div>
+                <div class="boxs">
+                    <img src="prom019.jpg">
+                    <div class="overlay">
+                        <h3> Maximize your recovery following intense strength training</h3>
+                        <p> </p>
+                        <a href="#">read more</a>
+                        </div>
+                        </div>
+                        <div class="boxs">
+                            <img src="prom2019.jpg">
+                            <div class="overlay">
+                                <h3> Seeking longer pumps:the role of arginase inhibitors in pre-workouts</h3>
+                                <p> </p>
+                                <a href="#">read more</a>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+-->
+
+        <!--testimonial-->
+        <section id='about-us'>
+            <div class='con--tainer'>
+                    <div class='col-12 text-center'>
+                        <h2>Testimonials</h2>
+                        <p class="title-p">HEAR WHAT OUR CLIENTS HAVE TO SAY ABOUT US.</p>
+                    </div>
+             <div class="row text-center mt-5">
+                <div class="col-lg-4">
+                    <div class="box my-5">
+                    <img src="./photos/avatar1.jpg">
+                    <h4 class="mb-4 mt-2">Jhon Medow</h4>
+                    <h5>I have  recently placed an order with Alpha Supps for a Protein powder, and I was blown away by their first-rate customer support and product quality. My order arrived promptly, safely packaged.</h5>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="box my-5">
+                    <img src="./photos/avatar2.jpg">
+                    <h4 class="mb-4 mt-2">Mia piana</h4>
+                    <h5> I've tried many supplement stores in the past, but none have compared to the level of service and quality that I've experienced with ALpha supps. Their knowledgeable staff guided me through selecting the right supplements for my goals, and I've seen incredible improvements in my energy levels and overall well-being. </h5>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="box my-5">
+                    <img src="./photos/avatar4.jpg">
+                    <h4 class="mb-4 mt-2">Maria Ruhl</h4>
+                    <h5>  my experience with Alpha Supps has exceeded all of my expectations. I heartily endorse them to anyone looking for premium supplements and outstanding customer support. </h5>
+                </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <!--social media-->
+        <div class="social"> Connect with us <br> Follow us on our social media platform</div>
+          <table>
+            <tr>
+              <td width="25%">
+              </td>
+              <td>
+            <div class="sicons"><a href="#" ><i class="bi bi-facebook"></i></a>
+              <a href="#" ><i class="bi bi-instagram"></i></a>
+              <a href="#" ><i class="bi bi-tiktok"></i></a>
+              <a href="#" ><i class="bi bi-twitter-x"></i></a> 
+              <a href="#" ><i class="bi bi-youtube"></i></i></a>
+        </div>
+              </td>
+      </tr>
+        </table>
+        <!--external links-->
+        <nav class=footer>
+        <a href="#">Privacy policy</a>
+        <a href="#"> Terms & Condition</a> 
+        <a href="#">Delivery Policy</a>
+        <a href="#">Refund & Cancelation</a>
+        </nav>
+
+
+    </body>
+</html>
 </body>
 
 </html>
