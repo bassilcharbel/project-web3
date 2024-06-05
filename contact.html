@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Shopping Cart System</title>
+  <title>contact us </title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -39,6 +39,9 @@
             <a class="nav-link" href="contact.html">contact us </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="rating.php">feedback</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="checkout.php">check out</a>
           </li>
           <li class="nav-item">
@@ -58,6 +61,7 @@
         </ul>
       </div>
     </nav>
+
 <img style="width:100%;height:800px;" src="./photos/alphasupp.jpg"class="imgsquat">
   <div class="atitle">ZALKA-LEBANON</div>
   <div style="color:#DC5F00;"class="ainfo">Assad rachid Street Next to chateau trianon theater<br>
@@ -70,5 +74,26 @@
       +96170832718<br>
       E-mail: sales[at]superiorsupps[dot]com
       </div>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
     </body>
 </html>
+<script>
+  $(document).ready(function() {
+// Load total no.of items added in the cart and display in the navbar
+load_cart_item_number();
+
+function load_cart_item_number() {
+  $.ajax({
+    url: 'action.php',
+    method: 'get',
+    data: {
+      cartItem: "cart_item"
+    },
+    success: function(response) {
+      $("#cart-item").html(response);
+    }
+  });
+}
+});
+</script>

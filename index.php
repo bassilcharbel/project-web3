@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Shopping Cart System</title>
+  <title>Alpha supplement </title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -40,6 +40,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="contact.html">contact us </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="rating.php">feedback</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="checkout.php">check out</a>
@@ -142,7 +145,7 @@
                 <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
                 <input type="hidden" class="pimage" value="<?= $row['product_image'] ?>">
                 <input type="hidden" class="pcode" value="<?= $row['product_code'] ?>">
-                <button style="background-color:#DC5F00;border-color:#DC5F00;" class="btn btn-info btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add to
+               <button style="background-color:#DC5F00;border-color:#DC5F00;" class="btn btn-info btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add to
                   cart</button>
               </form>
             </div>
@@ -154,9 +157,9 @@
   </div>
   <!-- Displaying Products End -->
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+        
   <script type="text/javascript">
   $(document).ready(function() {
 

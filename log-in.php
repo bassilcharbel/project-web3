@@ -27,7 +27,7 @@ if(isset($_POST['email']) && $_POST['email']!=""
         session_start();
         $_SESSION['loggedin']=1;
         $_SESSION['email']=$email;
-        header("Location:index.html");
+        header("Location:index.php");
    }
 }
 ?>
