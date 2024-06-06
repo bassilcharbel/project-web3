@@ -186,7 +186,6 @@
         },
         success: function(response) {
           $("#message").html(response);
-          window.scrollTo(0, 0);
           load_cart_item_number();
         }
       });
