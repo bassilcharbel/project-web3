@@ -159,7 +159,7 @@
 	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
 	        	</div>
 	        	<div class="form-group text-center mt-4">
-	        		<button type="submit" class="btn btn-primary" id="save_review">Submit</button>
+	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
 	        	</div>
 	      	</div>
     	</div>
@@ -250,35 +250,7 @@ var rating_data = 0;
         }
 
     });
-$('#save_review').click(function(){
 
-    var user_name = $('#user_name').val();
-
-    var user_review = $('#user_review').val();
-
-    if(user_name == '' || user_review == '')
-    {
-        alert("Please Fill Both Field");
-        return false;
-    }
-    else
-    {
-        $.ajax({
-            url:"submit_rating.php",
-            method:"POST",
-            data:{rating_data:rating_data, user_name:user_name, user_review:user_review},
-            success:function(data)
-            {
-                $('#review_modal').modal('hide');
-
-                load_rating_data();
-
-                alert(data);
-            }
-        })
-    }
-
-});
 
 load_rating_data();
 
