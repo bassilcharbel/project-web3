@@ -4,6 +4,7 @@
 
 	// Add products into the cart table
 	if (isset($_POST['pid'])) {
+	  //retreve the products details from the post request
 	  $pid = $_POST['pid'];
 	  $pname = $_POST['pname'];
 	  $pprice = $_POST['pprice'];
@@ -12,19 +13,19 @@
       $pqty=1;
 	  $pqty = $_POST['pqty'];
 	  $total_price = $pprice * $pqty;
-
+	  //check if the product already existe in the cart
 	  $stmt = $conn->prepare('SELECT product_code FROM cart WHERE product_code=?');
 	  $stmt->bind_param('s',$pcode);
 	  $stmt->execute();
 	  $res = $stmt->get_result();
 	  $r = $res->fetch_assoc();
 	  $code = $r['product_code'] ?? '';
-
+      //check if the product is not in the cart
 	  if (!$code) {
 	    $query = $conn->prepare('INSERT INTO cart (product_name,product_price,product_image,qty,total_price,product_code) VALUES (?,?,?,?,?,?)');
 	    $query->bind_param('sssiss',$pname,$pprice,$pimage,$pqty,$total_price,$pcode);
 	    $query->execute();
-
+       // when product added succes alert
 	    echo '<div class="alert alert-success alert-dismissible mt-2">
 						  <button type="button" class="close" data-dismiss="alert">&times;</button>
 						  <strong>Item added to your cart!</strong>

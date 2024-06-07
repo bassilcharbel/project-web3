@@ -166,7 +166,7 @@ body{
 .con--tainers{
     height:10vh;
     display:flex;
-    align-items:center;
+    align-items:center!important;
     justify-content:center!important;
 
 }
