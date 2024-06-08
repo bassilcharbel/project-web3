@@ -18,8 +18,9 @@
   
   <!-- jQuery (Bootstrap dependency) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
 </head>
-<body>
+<body style="background-color: black;">
 <nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.php">alpha supplements</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

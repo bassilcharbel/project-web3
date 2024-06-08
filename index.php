@@ -24,6 +24,7 @@
   
   <!-- jQuery (Bootstrap dependency) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
 </head>
 <body style="background-color: black">
 <nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,7 +66,7 @@
     </ul>
   </div>
 </nav>
-<div id="carouselExampleCaptions" class="carousel slide"style="padding:20px!important;">
+<div id="carouselExampleCaptions" class="carousel slide"style="padding:20px 0px!important;">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -137,8 +138,7 @@
                 <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
                 <input type="hidden" class="pimage" value="<?= $row['product_image'] ?>">
                 <input type="hidden" class="pcode" value="<?= $row['product_code'] ?>">
-                <button style="background-color:#DC5F00;border-color:#DC5F00;" class="btn btn-info btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add to
-                  cart</button>
+                <button style="background-color:#DC5F00;border-color:#DC5F00;" class="btn btn-info btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add to cart</button>
               </form>
             </div>
           </div>
@@ -146,7 +146,7 @@
       </div>
       <?php endwhile; ?>
     </div>
-  </div>
+</div>
   <!-- Displaying Products End -->
 
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
