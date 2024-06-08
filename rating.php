@@ -132,9 +132,6 @@
     	</div>
     	<div class="mt-5" id="review_content"></div>
     </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-
 <div id="review_modal" class="modal" tabindex="-1" role="dialog">
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
