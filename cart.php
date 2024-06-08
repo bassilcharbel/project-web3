@@ -79,7 +79,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <!--alert-->
-        <div style="display:none; <?php if(isset($_SESSION['showAlert'])){echo $_SESSION['showAlert'];} else{echo'none';} unset($_SESSION['showAlert']);?>" class="alert alert-success alert-dismissible mt3">
+        <div style="display:none <?php if(isset($_SESSION['showAlert'])){echo $_SESSION['showAlert'];} else{echo'none';} unset($_SESSION['showAlert']);?>" class="alert alert-success alert-dismissible mt3">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
        <strong><?php if(isset($_SESSION['message'])){echo $_SESSION['message'];}  unset($_SESSION['showAlert']);?></strong>
         </div>
