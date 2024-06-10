@@ -12,45 +12,41 @@
   <title>Alpha supplement</title>
   
   <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
-  <!-- Font Awesome -->
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
-  
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  
-  <!-- Custom CSS -->
-  <link rel='stylesheet' href='./css1/lateststyle.css'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <!-- Bootstrap 5 JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
-  <!-- jQuery (Bootstrap dependency) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!--font awsome-->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
-</head>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="./css1/lateststyle.css">
+
+<!-- Bootstrap 5 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script></head>
 
 <body style="background-color:white;">
   
-<nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#DC5F00!important;">
   <a class="navbar-brand" href="index.php">alpha supplements</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">about us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contact.html">contact us </a>
+        <a class="nav-link" href="contact.html">contact us</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="rating.php">feedback</a>
@@ -59,37 +55,41 @@
         <a class="nav-link" href="checkout.php">check out</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
+        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge bg-danger"></span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bi bi-person-circle"></i>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-circle"></i>
         </a>
-        <div class="dropdown-menu" aria-labelledby="log in here">
-          <a class="dropdown-item" href="login.html">log in </a>
-          <a class="dropdown-item" href="register.html">sign up</a>
-          <a class="dropdown-item" href="logout.php">log out</a>
-          <div class="dropdown-divider"></div>
-        </div>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="login.html">log in</a></li>
+          <li><a class="dropdown-item" href="register.html">sign up</a></li>
+          <li><a class="dropdown-item" href="logout.php">log out</a></li>
+          <li><hr class="dropdown-divider"></li>
+        </ul>
       </li>
     </ul>
   </div>
 </nav>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <!--alert-->
-        <div style="display:none <?php if(isset($_SESSION['showAlert'])){echo $_SESSION['showAlert'];} else{echo'none';} unset($_SESSION['showAlert']);?>" class="alert alert-success alert-dismissible mt3">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <strong><?php if(isset($_SESSION['message'])){echo $_SESSION['message'];}  unset($_SESSION['showAlert']);?></strong>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <!--alert-->
+      <?php if (isset($_SESSION['showAlert']) && $_SESSION['showAlert'] == 'block' && isset($_SESSION['message'])): ?>
+        <div class="alert alert-success alert-dismissible mt-3" style="display: <?php echo $_SESSION['showAlert']; ?>;">
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <strong><?php echo $_SESSION['message']; ?></strong>
         </div>
-        <div class="table-responsive mt-2">
-          <table class="table table-bordered table-striped text-center">
-            <thead>
-              <tr>
-                <td colspan="7">
-                  <h4 class="text-center text-info m-0"style="color:#DC5F00 !important;">Products in your cart!</h4>
-                </td>
+        <?php unset($_SESSION['showAlert']); unset($_SESSION['message']); ?>
+      <?php endif; ?>
+
+      <div class="table-responsive mt-2">
+        <table class="table table-bordered table-striped text-center">
+          <thead>
+            <tr>
+              <td colspan="7">
+                <h4 class="text-center text-info m-0" style="color:#DC5F00 !important;">Products in your cart!</h4>
+              </td>
               </tr>
               <tr>
                 <th>ID</th>
@@ -99,7 +99,8 @@
                 <th>Quantity</th>
                 <th>Total Price</th>
                 <th>
-                  <a href="action.php?clear=all" class="badge-danger badge p-1" onclick="return confirm('Are you sure want to clear your cart?');"><i class="fas fa-trash"></i>&nbsp;&nbsp;Clear Cart</a>
+                <a href="action.php?clear=all" class="badge bg-danger p-1" onclick="return confirm('Are you sure want to clear your cart?');"><i class="fas fa-trash"></i>&nbsp;&nbsp;Clear Cart</a>
+                </th>
                 </th>
               </tr>
             </thead>

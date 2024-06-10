@@ -9,7 +9,6 @@
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
   <!-- Font Awesome -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
   
@@ -24,7 +23,6 @@
   
   <!-- jQuery (Optional) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
 </head>
 <body style="background-color: black">
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#DC5F00!important;">
@@ -71,7 +69,7 @@
     <div class="container">
     	<h1 class="mt-5 mb-5"></h1>
     	<div class="card">
-    		<div class="card-header">Sample Product</div>
+    		<div class="card-header" >Sample Product</div>
     		<div class="card-body">
     			<div class="row">
     				<div class="col-sm-4 text-center">
@@ -138,35 +136,33 @@
     	</div>
     	<div class="mt-5" id="review_content"></div>
     </div>
-<div id="review_modal" class="modal" tabindex="-1" role="dialog">
-  	<div class="modal-dialog" role="document">
-    	<div class="modal-content">
-	      	<div class="modal-header">
-	        	<h5 class="modal-title">Submit Review</h5>
-	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          		<span aria-hidden="true">&times;</span>
-	        	</button>
-	      	</div>
-	      	<div class="modal-body">
-	      		<h4 class="text-center mt-2 mb-4">
-	        		<i class="fas fa-star star-light submit_star mr-1" id="submit_star_1" data-rating="1"></i>
-                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_2" data-rating="2"></i>
-                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_3" data-rating="3"></i>
-                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
-                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
-	        	</h4>
-	        	<div class="form-group">
-	        		<input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter Your Name" />
-	        	</div>
-	        	<div class="form-group">
-	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
-	        	</div>
-	        	<div class="form-group text-center mt-4">
-	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
-	        	</div>
-	      	</div>
-    	</div>
-  	</div>
+    <div id="review_modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-between">
+        <h5 class="modal-title">Submit Review</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="text-center mt-2 mb-4">
+          <i class="fas fa-star star-light submit_star mr-1" id="submit_star_1" data-rating="1"></i>
+          <i class="fas fa-star star-light submit_star mr-1" id="submit_star_2" data-rating="2"></i>
+          <i class="fas fa-star star-light submit_star mr-1" id="submit_star_3" data-rating="3"></i>
+          <i class="fas fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
+          <i class="fas fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
+        </h4>
+        <div class="form-group">
+          <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter Your Name" />
+        </div>
+        <div class="form-group">
+          <textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
+        </div>
+        <div class="form-group text-center mt-4">
+          <button type="button" class="btn btn-primary" id="save_review">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
 var rating_data = 0;

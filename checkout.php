@@ -39,24 +39,23 @@
   
   <!-- jQuery (Bootstrap dependency) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
   <body style="background-color:white;">
-<nav style="background-color:#DC5F00!important;"class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#DC5F00!important;">
   <a class="navbar-brand" href="index.php">alpha supplements</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">about us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contact.html">contact us </a>
+        <a class="nav-link" href="contact.html">contact us</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="rating.php">feedback</a>
@@ -65,23 +64,22 @@
         <a class="nav-link" href="checkout.php">check out</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
+        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge bg-danger"></span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bi bi-person-circle"></i>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-circle"></i>
         </a>
-        <div class="dropdown-menu" aria-labelledby="log in here">
-          <a class="dropdown-item" href="login.html">log in </a>
-          <a class="dropdown-item" href="register.html">sign up</a>
-          <a class="dropdown-item" href="logout.php">log out</a>
-          <div class="dropdown-divider"></div>
-        </div>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="login.html">log in</a></li>
+          <li><a class="dropdown-item" href="register.html">sign up</a></li>
+          <li><a class="dropdown-item" href="logout.php">log out</a></li>
+          <li><hr class="dropdown-divider"></li>
+        </ul>
       </li>
     </ul>
   </div>
 </nav>
-
   <div class="container">
     <div class="row justify-content-center">
     <div class="col-lg-6 mx-auto px-4 pb-4" id="order">

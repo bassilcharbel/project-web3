@@ -349,3 +349,8 @@ body {
 * {
   box-sizing: border-box;
 }
+.car_ouselim{
+  width:250px;
+  height:auto;
+
+}

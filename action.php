@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require 'config.php';
+	
 
 	// Add products into the cart table
 	if (isset($_POST['pid'])) {
