@@ -45,7 +45,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
         $product_image="";
 
         $successMessage="user added successefly";
-        header( "location: /Adminpage.php/index.php");
+        header( "location: ad-min.php");
         exit;
 
 
@@ -139,7 +139,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/Adminpage.php/index.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="ad-min.php" role="button">Cancel</a>
                 </div>
             </div>
             

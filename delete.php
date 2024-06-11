@@ -8,11 +8,11 @@ if(isset($_GET['id'])){
 
     $connection= new mysqli($severname,$username,$password,$database);
  
-    $sql="DELETE  FROM user WHERE id=$id";
+    $sql="DELETE  FROM user WHERE user_id=$id";
     $connection->query($sql);
 
 }
-header("location:/Adminpage.php/index.php");
+header("location:ad-min.php");
 exit;
 
 ?>

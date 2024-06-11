@@ -25,7 +25,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
             $errorMessage="All field are required";
             break;
         }
-        $sql="INSERT INTO user (name,email,password) VALUES ('$name','$email','$password')" ;
+        $sql="INSERT INTO user (user,email,password) VALUES ('$name','$email','$password')" ;
         $result = $connection->query($sql);
         if( !($result)){
             $errorMessage = "Invalid query :". $connection->error ;
@@ -39,7 +39,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
         $password="";
 
         $successMessage="user added successefly";
-        header( "location: /Adminpage.php/index.php");
+        header( "location:ad-min.php");
         exit;
 
 
@@ -120,7 +120,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/Adminpage.php/index.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="ad-min.php" role="button">Cancel</a>
                 </div>
             </div>
             

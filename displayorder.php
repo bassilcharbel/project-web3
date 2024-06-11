@@ -22,7 +22,7 @@ $successMessage="";
 if(($_SERVER['REQUEST_METHOD']) == 'GET'){
 
     if(!isset($_GET['id'])){
-        header("location:/Adminpage.php/index.php");
+        header("location:ad-min.php");
         exit;
     }
     $id=$_GET["id"];

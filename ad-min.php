@@ -10,7 +10,7 @@
 <body>
     <div class="container my-5">
         <h2> List of Users</h2>
-        <a class = "btn btn-primary" href="/Adminpage.php/create.php" role="button" >New User</a>
+        <a class = "btn btn-primary" href="create.php" role="button" >New User</a>
         <br>
         <table class="table">
             <thead>
@@ -24,12 +24,12 @@
             </thead>
             <tbody>
             <?php
-            $severname = "localhost";
+            $servername = "localhost";
             $username = "root";
             $password = "";
             $database = "cart_s";
         
-            $connection= new mysqli($severname,$username,$password,$database);
+            $connection= new mysqli($servername,$username,$password,$database);
 
             if($connection->connect_error){
                 die("connection failed:" . $connection->connect_error);
@@ -43,13 +43,13 @@
              }
              while($row = $result-> fetch_assoc()){
                 echo "<tr>
-                <td>$row[id]</td>
-                <td>$row[name]</td>
+                <td>$row[user_id]</td>
+                <td>$row[user]</td>
                 <td>$row[email]</td>
                 <td>$row[password]</td>
                 <td>
-                    <a class='btn btn-primary btn-sm' href='/Adminpage.php/edit.php?id=$row[id]' >Edit</a>
-                    <a class='btn btn-danger btn-sm' href='/Adminpage.php/delete.php?id=$row[id]' >Delet</a>
+                    <a class='btn btn-primary btn-sm' href='edit.php?id=$row[user_id]' >Edit</a>
+                    <a class='btn btn-danger btn-sm' href='delete.php?id=$row[user_id]' >Delet</a>
                    
                 </td>
             </tr>
@@ -66,7 +66,7 @@
     <br>
     <div class="container my-5">
         <h2> List of products</h2>
-        <a class = "btn btn-primary" href="/Adminpage.php/createproduct.php" role="button" >New product</a>
+        <a class = "btn btn-primary" href="createproduct.php" role="button" >New product</a>
         <br>
         <table class="table">
             <thead>
@@ -108,8 +108,8 @@
                 <td>$row[product_code]</td>
                 <td>$row[product_image]</td>
                 <td>
-                    <a class='btn btn-primary btn-sm' href='/Adminpage.php/editproduct.php?id=$row[id]' >Edit</a>
-                    <a class='btn btn-danger btn-sm' href='/Adminpage.php/dealeteproduct.php?id=$row[id]' >Delet</a>
+                    <a class='btn btn-primary btn-sm' href='editproduct.php?id=$row[id]' >Edit</a>
+                    <a class='btn btn-danger btn-sm' href='dealeteproduct.php?id=$row[id]' >Delet</a>
                    
                 </td>
             </tr>
@@ -145,7 +145,7 @@
             </thead>
             <tbody>
             <?php
-            $severname = "localhost";
+            $servername = "localhost";
             $username = "root";
             $password = "";
             $database = "cart_s";
@@ -168,13 +168,13 @@
                 <td>$row[name]</td>
                 <td>$row[email]</td>
                 <td>$row[phone]</td>
-                <td>$row[amout_paid]</td>
+                <td>$row[amount_paid]</td>
                 <td>$row[products]</td>
                 <td>$row[pmode]</td>
                 <td>$row[addres]</td>
                 <td>
                     
-                    <a class='btn btn-danger btn-sm' href='/Adminpage.php/deleteorder.php?id=$row[id]' >Delet</a>
+                    <a class='btn btn-danger btn-sm' href='deleteorder.php?id=$row[id]' >Delet</a>
                    
                 </td>
             </tr>
