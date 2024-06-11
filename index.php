@@ -58,7 +58,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="login.html">log in</a></li>
-            <li><a class="dropdown-item" href="register.html">sign up</a></li>
+            <li><a class="dropdown-item" href="reg-ster.php">sign up</a></li>
             <li><a class="dropdown-item" href="logout.php">log out</a></li>
             <li><hr class="dropdown-divider"></li>
           </ul>
@@ -124,15 +124,12 @@
             <h5 class="card-text text-center text-danger"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;<?= number_format($row['product_price'],2) ?>/-</h5>
           </div>
           <div class="card-footer p-1">
-            <form action=""  class="form-submit">
+            <form action="action.php"  class="form-submit">
               <div class="row p-2">
                 <div class="col-md-6 py-1 pl-4">
-                  <b>Quantity : </b>
                 </div>
-                <div class="col-md-6">
-                  <input type="number" class="form-control pqty" value="<?= $row['product_qty'] ?>">
+                
                 </div>
-</div>
               <input type="hidden" class="pid" value="<?= $row['id'] ?>">
               <input type="hidden" class="pname" value="<?= $row['product_name'] ?>">
               <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">

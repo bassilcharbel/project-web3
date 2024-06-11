@@ -52,7 +52,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="login.html">log in</a></li>
-            <li><a class="dropdown-item" href="register.html">sign up</a></li>
+            <li><a class="dropdown-item" href="reg-ster.php">sign up</a></li>
             <li><a class="dropdown-item" href="logout.php">log out</a></li>
             <li><hr class="dropdown-divider"></li>
           </ul>
@@ -107,5 +107,26 @@
         </div>
       </div>
     </div>
- 
+    <script>
+  $(document).ready(function() {
+// Load total no.of items added in the cart and display in the navbar
+load_cart_item_number();
 
+function load_cart_item_number() {
+  $.ajax({
+    url: 'action.php',
+    method: 'get',
+    data: {
+      cartItem: "cart_item"
+    },
+    success: function(response) {
+      $("#cart-item").html(response);
+    }
+  });
+}
+});
+</script>
+ 
+        </body>
+        </html>
+        
