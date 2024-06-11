@@ -45,7 +45,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
         $product_image="";
 
         $successMessage="user added successefly";
-        header( "location: ad-min.php");
+        header( "location: /Adminpage.php/index1.php");
         exit;
 
 
@@ -93,7 +93,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label">Price</label>
+                <label for="" class="col-sm-3 col-form-label">Price $</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="product_price" value="<?php echo $price ?>">
 
@@ -139,7 +139,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="ad-min.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="/Adminpage.php/index1.php" role="button">Cancel</a>
                 </div>
             </div>
             
