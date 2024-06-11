@@ -87,7 +87,7 @@
         <div class="jumbotron p-3 mb-2 text-center">
           <h6 class="lead"><b>Product(s) : </b><?= $allItems; ?></h6>
           <h6 class="lead"><b>Delivery Charge : </b>Free</h6>
-          <h5><b>Total Amount Payable : </b><?= number_format($grand_total,2) ?>/-</h5>
+          <h5><b>Total Amount Payable : </b><i class="fas fa-dollar-sign"></i> <?= number_format($grand_total,2) ?>/-</h5>
         </div>
         <form action="" method="post" id="placeOrder">
           <input type="hidden" name="products" value="<?= $allItems; ?>">
@@ -121,8 +121,6 @@
     </div>
   </div>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
 
   <script type="text/javascript">
   $(document).ready(function() {
