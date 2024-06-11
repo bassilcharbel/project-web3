@@ -1,6 +1,6 @@
 <?php
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
+if(isset($_GET['user_id'])){
+    $id=$_GET['user_id'];
     $severname = "localhost";
     $username = "root";
     $password = "";
@@ -8,11 +8,11 @@ if(isset($_GET['id'])){
 
     $connection= new mysqli($severname,$username,$password,$database);
  
-    $sql="DELETE  FROM user WHERE user_id=$id";
+    $sql="DELETE  FROM users WHERE user_id=$id";
     $connection->query($sql);
 
 }
-header("location:ad-min.php");
+header("location:/Adminpage.php/index1.php");
 exit;
 
 ?>

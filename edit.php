@@ -8,6 +8,7 @@ $connection = new mysqli($servername, $username, $password, $database);
 
 $id = "";
 $name = "";
+$Lname="";
 $email = "";
 $password = "";
 
@@ -16,38 +17,40 @@ $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET['user_id'])) {
-        header("Location: /Adminpage.php/index.php");
+        header("Location: /Adminpage.php/index1.php");
         exit;
     }
     $id = $_GET["user_id"];
-    $sql = "SELECT * FROM user WHERE id=$id";
+    $sql = "SELECT * FROM users WHERE user_id=$id";
     
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
     if (!$row) {
-        header("Location: ad-min.php");
+        header("Location: /Adminpage.php/index1.php");
         exit;
     }
-    $name = $row["name"];
+    $name = $row["user"];
+    $Lname = $row["Lname"];
     $email = $row["email"];
     $password = $row["password"];
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_POST["id"];
-    $name = $_POST["name"];
+    $id = $_POST["user_id"];
+    $name = $_POST["user"];
+    $Lname = $_POST["Lname"];
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     do {
-        if (empty($id) || empty($name) || empty($email) || empty($password)) {
+        if (empty($id) || empty($name) ||   empty($Lname) ||empty($email) || empty($password)) {
             $errorMessage = "All fields are required";
             break;
         }
         
-        $sql = "UPDATE user SET name='$name', email='$email', password='$password' WHERE id=$id";
+        $sql = "UPDATE users SET user='$name', Lname='$Lname', email='$email' password='$password' WHERE user_id=$id";
 
         if ($connection->query($sql) === TRUE) {
             $successMessage = "User updated successfully";
-            header("ad-min.php");
+            header("Location: /Adminpage.php/index1.php");
             exit;
         } else {
             $errorMessage = "Error updating record: " . $connection->error;
@@ -99,11 +102,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         
         ?>
         <form method="post">
-            <input type="hidden" name="id"value="<?php echo $id ?>">
+            <input type="hidden" name="user_id"value="<?php echo $id ?>">
             <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="name" value="<?php echo $name ?>">
+                    <input type="text" class="form-control" name="user" value="<?php echo $name ?>">
+
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="" class="col-sm-3 col-form-label">Last name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Lname" value="<?php echo $Lname ?>">
 
                 </div>
             </div>
@@ -142,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="ad-min.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="/Adminpage.php/index1.php" role="button">Cancel</a>
                 </div>
             </div>
             

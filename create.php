@@ -8,6 +8,7 @@
 
 
 $name="";
+$Lname="";
 $email="";
 $password="";
 
@@ -15,17 +16,18 @@ $errorMessage="";
 $successMessage="";
 
 if( $_SERVER['REQUEST_METHOD']=='POST'){
-   if ( isset($name) ||isset($email) ||isset($password)){
-    $name=$_POST["name"];
+   if ( isset($name) ||isset($Lname) ||isset($email) ||isset($password)){
+    $name=$_POST["user"];
+    $Lname=$_POST["Lname"];
     $email=$_POST["email"];
     $password=$_POST["password"];
    
     do{
-        if(empty($name)||empty($email)||empty($password)){
+        if(empty($name) ||empty($Lname)||empty($email)||empty($password)){
             $errorMessage="All field are required";
             break;
         }
-        $sql="INSERT INTO user (user,email,password) VALUES ('$name','$email','$password')" ;
+        $sql="INSERT INTO users (user,Lname,email,password) VALUES ('$name','$Lname','$email','$password')" ;
         $result = $connection->query($sql);
         if( !($result)){
             $errorMessage = "Invalid query :". $connection->error ;
@@ -35,11 +37,12 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
 
 
         $name="";
+        $Lname="";
         $email="";
         $password="";
 
         $successMessage="user added successefly";
-        header( "location:ad-min.php");
+        header( "location: /Adminpage.php/index1.php");
         exit;
 
 
@@ -81,7 +84,15 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
             <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="name" value="<?php echo $name ?>">
+                    <input type="text" class="form-control" name="user" value="<?php echo $name ?>">
+
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="" class="col-sm-3 col-form-label">Last name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Lname" value="<?php echo $Lname ?>">
 
                 </div>
             </div>
@@ -120,7 +131,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="ad-min.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="/Adminpage.php/index1.php" role="button">Cancel</a>
                 </div>
             </div>
             
