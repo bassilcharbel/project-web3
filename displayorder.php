@@ -22,7 +22,7 @@ $successMessage="";
 if(($_SERVER['REQUEST_METHOD']) == 'GET'){
 
     if(!isset($_GET['id'])){
-        header("location:ad-min.php");
+        header("location:/Adminpage.php/index1.php");
         exit;
     }
     $id=$_GET["id"];
@@ -31,7 +31,7 @@ if(($_SERVER['REQUEST_METHOD']) == 'GET'){
     $row = $result-> fetch_assoc();
 
     if (!$row){
-        header("location :/Adminpage.php/index.php");
+        header("location :/Adminpage.php/index1.php");
         exit;
     }
 }
