@@ -117,7 +117,7 @@
     ?>
     <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
       <div class="card-deck">
-        <div class="card p-2 border-secondary mb-2">
+        <div class="card p-2 border-secondary mb-2"style="background-color:black;">
           <img src="<?= $row['product_image'] ?>" class="card-img-top" height="250">
           <div class="card-body p-1">
             <h4 style="color:#DC5F00 !important;" class="card-title text-center text-info"><?= $row['product_name'] ?></h4>
