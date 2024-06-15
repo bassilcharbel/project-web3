@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
         exit();
     }
 
-    $query = "SELECT email FROM user WHERE email='$email'";
+    $query = "SELECT email FROM users WHERE email='$email'";
     $res = mysqli_query($conn, $query);
     $nbrows = mysqli_num_rows($res);
 
