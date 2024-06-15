@@ -7,7 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
-    isset($_POST['users']) && $_POST['users'] != "" &&
+    isset($_POST['user']) && $_POST['user'] != "" &&
     isset($_POST['pass']) && $_POST['pass'] != "" &&
     isset($_POST['confirm_pass']) && $_POST['confirm_pass'] != "" &&
     isset($_POST['Lname']) && $_POST['Lname'] != "" &&
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
         return $input;
     }
 
-    $users = cleanInput($_POST['users']);
+    $users = cleanInput($_POST['user']);
     $pass = cleanInput($_POST['pass']);
     $Lname = cleanInput($_POST['Lname']);
     $email = cleanInput($_POST['email']);
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
         header("Location: reg-ster.php");
         exit();
     } else {
-        $query2 = "INSERT INTO user (users, password, email, Lname) VALUES ('$users', '$pass', '$email', '$Lname')";
+        $query2 = "INSERT INTO users (user, password, email, Lname) VALUES ('$user', '$pass', '$email', '$Lname')";
         $result2 = mysqli_query($conn, $query2);
 
         if (!$result2) {

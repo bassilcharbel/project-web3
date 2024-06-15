@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -202,7 +203,9 @@
 
         
   <script type="text/javascript">
+    
   $(document).ready(function() {
+    
 
     // Send product details in the server
     $(".addItemBtn").click(function(e) {
@@ -385,8 +388,6 @@
         </nav>
 
 
-    </body>
-</html>
 </body>
 
 </html>
