@@ -14,7 +14,7 @@ if(isset($_POST['email']) && $_POST['email']!=""
     $pass=cleanInput($_POST['pass']);
 
     
-    $query="Select email, password From user where email='$email' and password='$pass'";
+    $query="Select email, password From users where email='$email' and password='$pass'";
     
     $res= mysqli_query($conn, $query);
     

@@ -10,7 +10,7 @@
 <body>
     <div class="container my-5">
         <h2> List of Users</h2>
-        <a class = "btn btn-primary" href="/Adminpage.php/create.php" role="button" >New User</a>
+        <a class = "btn btn-primary" href="create.php" role="button" >New User</a>
         <br>
         <table class="table">
             <thead>
@@ -68,7 +68,7 @@
     <br>
     <div class="container my-5">
         <h2> List of products</h2>
-        <a class = "btn btn-primary" href="/Adminpage.php/createproduct.php" role="button" >New product</a>
+        <a class = "btn btn-primary" href="createproduct.php" role="button" >New product</a>
         <br>
         <table class="table">
             <thead>

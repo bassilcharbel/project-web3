@@ -82,7 +82,7 @@
           <form id="signUpForm" class="lform" method="post" action="register.php">
             <div class="mb-3">
               <label for="firstName" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="users" placeholder="F Name" required />
+              <input type="text" class="form-control" id="firstName" name="user" placeholder="F Name" required />
             </div>
             <div class="mb-3">
               <label for="lastName" class="form-label">Last Name</label>
