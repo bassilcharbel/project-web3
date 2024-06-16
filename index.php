@@ -106,7 +106,7 @@
 
 
   <!-- Displaying Products Start -->
-<div class="container" style="padding:40px;">
+  <div class="container" style="padding:40px;">
   <div id="message"></div>
   <div class="row mt-2 pb-3">
     <?php
@@ -118,79 +118,75 @@
     ?>
     <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
       <div class="card-deck">
-        <div class="card p-2 border-secondary mb-2"style="background-color:black;">
+        <div class="card p-2 border-secondary mb-2" style="background-color:black;">
           <img src="<?= $row['product_image'] ?>" class="card-img-top" height="250">
           <div class="card-body p-1">
             <h4 style="color:#DC5F00 !important;" class="card-title text-center text-info"><?= $row['product_name'] ?></h4>
             <h5 class="card-text text-center text-danger"><?= $row['currency'] ?>&nbsp;&nbsp;<?= number_format($row['product_price'],2) ?>/-</h5>
           </div>
           <div class="card-footer p-1">
-            <form action="action.php"  class="form-submit">
+            <form action="action.php" class="form-submit">
               <div class="row p-2">
-                <div class="col-md-6 py-1 pl-4">
-                </div>
-                
-                </div>
+                <div class="col-md-6 py-1 pl-4"></div>
+              </div>
               <input type="hidden" class="pid" value="<?= $row['id'] ?>">
               <input type="hidden" class="pname" value="<?= $row['product_name'] ?>">
               <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
               <input type="hidden" class="pimage" value="<?= $row['product_image'] ?>">
               <input type="hidden" class="pcode" value="<?= $row['product_code'] ?>">
-             <!-- Modal Start -->
-<button style="background-color:#DC5F00!important; border-color:#DC5F00;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal<?= $row['id'] ?>">
-  Quick View
-</button>
-<div class="modal fade" id="productModal<?= $row['id'] ?>" tabindex="-1" aria-labelledby="productModalLabel<?= $row['id'] ?>" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="productModalLabel<?= $row['id'] ?>"><?= $row['product_name'] ?></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6">
-            <!-- Carousel inside the modal -->
-            <div id="carouselExample<?= $row['id'] ?>" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="car_ouselim img-fluid" src="<?= $row['product_image'] ?>" alt="<?= $row['product_name'] ?>">
-                </div>
-                <div class="carousel-item">
-                  <img class="car_ouselim img-fluid" src="<?= $row['productl_image'] ?>" alt="<?= $row['product_name'] ?>">
+              <!-- Modal Start -->
+              <button style="background-color:#DC5F00!important; border-color:#DC5F00;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal<?= $row['id'] ?>">
+                Quick View
+              </button>
+              <div class="modal fade" id="productModal<?= $row['id'] ?>" tabindex="-1" aria-labelledby="productModalLabel<?= $row['id'] ?>" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="productModalLabel<?= $row['id'] ?>"><?= $row['product_name'] ?></h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <!-- Carousel inside the modal -->
+                          <div id="carouselExample<?= $row['id'] ?>" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img class="d-block w-100" src="<?= $row['product_image'] ?>" alt="<?= $row['product_name'] ?>">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="<?= $row['productl_image'] ?>" alt="<?= $row['product_name'] ?>">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample<?= $row['id'] ?>" data-bs-slide="prev">
+                              <span style="background-color:#DC5F00;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample<?= $row['id'] ?>" data-bs-slide="next">
+                              <span style="background-color:#DC5F00;" class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                          <!-- Carousel end -->
+                        </div>
+                        <div class="col-md-6">
+                          <p><?= $row['product_description'] ?></p>
+                          <p><b>Price: </b><?= number_format($row['product_price'], 2) ?>/-</p>
+                          <div class="input-group">
+                            <span class="input-group-text">Quantity:</span>
+                            <input type="number" class="form-control pqty" value="<?= $row['product_qty'] ?>">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button style="background-color:#DC5F00;border-color:#DC5F00;" type="submit" class="btn btn-primary addItemBtn">Add to Cart</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample<?= $row['id'] ?>" data-bs-slide="prev">
-                <span style="background-color:#DC5F00;"class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span  class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample<?= $row['id'] ?>" data-bs-slide="next">
-                <span style="background-color:#DC5F00;"class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-            <!-- Carousel end -->
-          </div>
-          <div class="col-md-6">
-            <p><?= $row['product_description'] ?></p>
-            <p><b>Price: </b><?= number_format($row['product_price'], 2) ?>/-</p>
-            <div class="col-md-6">
-            <div class="input-group">
-        <span class="input-group-text">Quantity:</span>
-        <input type="number" class="form-control pqty" value="<?= $row['product_qty'] ?>">
-    </div>
-      </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button style="background-color:#DC5F00;border-color:#DC5F00;"type="submit" class="btn btn-primary addItemBtn">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal End -->
+              <!-- Modal End -->
             </form>
           </div>
         </div>
@@ -199,6 +195,7 @@
     <?php endwhile; ?>
   </div>
 </div>
+
   <!-- Displaying Products End -->
 
         
