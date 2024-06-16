@@ -25,15 +25,15 @@
 	    $query->bind_param('sssiss',$pname,$pprice,$pimage,$pqty,$total_price,$pcode);
 	    $query->execute();
        // when product added succes alert
-	    echo '<div class="alert alert-success alert-dismissible mt-2">
-						  <button type="button" class="close" data-dismiss="alert">&times;</button>
-						  <strong>Item added to your cart!</strong>
-						</div>';
+	    echo '<div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong>Item added to your cart!</strong>
+      </div>';
 	  } else {
-	    echo '<div class="alert alert-danger alert-dismissible mt-2">
-						  <button type="button" class="close" data-dismiss="alert">&times;</button>
-						  <strong>Item already added to your cart!</strong>
-						</div>';
+	    echo '<div class="alert alert-danger alert-dismissible mt-2" role="alert">
+        <strong>Item already added to your cart!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>';
 	  }
 	}
 
