@@ -50,8 +50,8 @@
                 <td>$row[email]</td>
                 <td>$row[password]</td>
                 <td>
-                    <a class='btn btn-primary btn-sm' href='/Adminpage.php/edit.php?id=$row[user_id]' >Edit</a>
-                    <a class='btn btn-danger btn-sm' href='/Adminpage.php/delete.php?id=$row[user_id]' >Delet</a>
+                    <a class='btn btn-primary btn-sm' href='/project-web3/edit.php?id=$row[user_id]' >Edit</a>
+                    <a class='btn btn-danger btn-sm' href='/project-web3/delete.php?id=$row[user_id]' >Delet</a>
                    
                 </td>
             </tr>

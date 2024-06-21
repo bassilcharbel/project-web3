@@ -21,7 +21,7 @@ if (isset($_POST['email'], $_POST['pass'])) {
         
         // Start session
         session_start();
-        $_SESSION['loggedin'] = true;
+        $_SESSION['loggedin'] = 1;
         $_SESSION['email'] = $row['email'];
         $_SESSION['role'] = $row['role'];
 
