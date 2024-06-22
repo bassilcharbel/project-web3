@@ -12,7 +12,7 @@ if(isset($_GET["id"])){
     $connection->query($sql);
 
 }
-header("location:/Adminpage.php/index1.php");
+header("location:index1.php");
 exit;
 
 ?>

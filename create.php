@@ -42,7 +42,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
         $password="";
 
         $successMessage="user added successefly";
-        header( "location: /Adminpage.php/index1.php");
+        header( "location:index1.php");
         exit;
 
 

@@ -28,7 +28,7 @@ if(($_SERVER['REQUEST_METHOD']) == 'GET'){
     $row = $result-> fetch_assoc();
 
     if (!$row){
-        header("ad-min.php");
+        header("index1.php");
         exit;
       
     }
@@ -58,7 +58,7 @@ if(($_SERVER['REQUEST_METHOD']) == 'GET'){
 
     if ($connection->query($sql) === TRUE) {
         $successMessage = "User updated successfully";
-        header("Location: /Adminpage.php/index.php");
+        header("Location:index1.php");
         exit;
     } else {
         $errorMessage = "Error updating record: " . $connection->error;
@@ -152,7 +152,7 @@ if(($_SERVER['REQUEST_METHOD']) == 'GET'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/Adminpage.php/index.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="index1.php" role="button">Cancel</a>
                 </div>
             </div>
             

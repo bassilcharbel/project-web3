@@ -50,8 +50,8 @@
                 <td>$row[email]</td>
                 <td>$row[password]</td>
                 <td>
-                    <a class='btn btn-primary btn-sm' href='/project-web3/edit.php?id=$row[user_id]' >Edit</a>
-                    <a class='btn btn-danger btn-sm' href='/project-web3/delete.php?id=$row[user_id]' >Delet</a>
+                    <a class='btn btn-primary btn-sm' href='edit.php?id=$row[user_id]' >Edit</a>
+                    <a class='btn btn-danger btn-sm' href='delete.php?id=$row[user_id]' >Delet</a>
                    
                 </td>
             </tr>
@@ -110,8 +110,8 @@
                 <td>$row[product_code]</td>
                 <td>$row[product_image]</td>
                 <td>
-                    <a class='btn btn-primary btn-sm' href='/Adminpage.php/editproduct.php?id=$row[id]' >Edit</a>
-                    <a class='btn btn-danger btn-sm' href='/Adminpage.php/dealeteproduct.php?id=$row[id]' >Delet</a>
+                    <a class='btn btn-primary btn-sm' href='editproduct.php?id=$row[id]' >Edit</a>
+                    <a class='btn btn-danger btn-sm' href='dealeteproduct.php?id=$row[id]' >Delet</a>
                    
                 </td>
             </tr>
@@ -176,7 +176,7 @@
                 <td>$row[addres]</td>
                 <td>
                     
-                    <a class='btn btn-danger btn-sm' href='/Adminpage.php/deleteorder.php?id=$row[id]' >Delet</a>
+                    <a class='btn btn-danger btn-sm' href='deleteorder.php?id=$row[id]' >Delet</a>
                    
                 </td>
             </tr>

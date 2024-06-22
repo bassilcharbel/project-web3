@@ -17,7 +17,7 @@ $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET['user_id'])) {
-        header("Location: /Adminpage.php/index1.php");
+        header("Location:index1.php");
         exit;
     }
     $id = $_GET["user_id"];
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
     if (!$row) {
-        header("Location: /Adminpage.php/index1.php");
+        header("Location:index1.php");
         exit;
     }
     $name = $row["user"];
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         if ($connection->query($sql) === TRUE) {
             $successMessage = "User updated successfully";
-            header("Location: /Adminpage.php/index1.php");
+            header("Location:index1.php");
             exit;
         } else {
             $errorMessage = "Error updating record: " . $connection->error;
@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/Adminpage.php/index1.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="index1.php" role="button">Cancel</a>
                 </div>
             </div>
             
