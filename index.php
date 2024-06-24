@@ -376,7 +376,7 @@ $(document).ready(function() {
               <a href="#" ><i class="bi bi-instagram"></i></a>
               <a href="#" ><i class="bi bi-tiktok"></i></a>
               <a href="#" ><i class="bi bi-twitter-x"></i></a> 
-              <a href="#" ><i class="bi bi-youtube"></i></i></a>
+              <a href="#" ><i class="bi bi-youtube"></i></a>
         </div>
               </td>
       </tr>
