@@ -1,10 +1,20 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "cart_s";
 
+// Create connection
 $connection = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
 
 $id = "";
 $name = "";
@@ -20,10 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         header("Location: index1.php");
         exit;
     }
-    $id = $_GET["user_id"];
+    $id = $connection->real_escape_string($_GET["user_id"]);
     $sql = "SELECT * FROM users WHERE user_id = $id";
     
     $result = $connection->query($sql);
+    if (!$result) {
+        die("Invalid query: " . $connection->error);
+    }
     $row = $result->fetch_assoc();
     if (!$row) {
         header("Location: index1.php");
@@ -34,11 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $email = $row["email"];
     $password = $row["password"];
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_POST["user_id"];
-    $name = $_POST["user"];
-    $Lname = $_POST["Lname"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $id = $connection->real_escape_string($_POST["user_id"]);
+    $name = $connection->real_escape_string($_POST["user"]);
+    $Lname = $connection->real_escape_string($_POST["Lname"]);
+    $email = $connection->real_escape_string($_POST["email"]);
+    $password = $connection->real_escape_string($_POST["password"]);
 
     do {
         if (empty($id) || empty($name) || empty($Lname) || empty($email) || empty($password)) {
