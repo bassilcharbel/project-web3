@@ -86,35 +86,35 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
         ?>
         <form method="post">
             <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label">Name</label>
+                <label for="product_name" class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="product_name" value="<?php echo $name ?>">
+                    <input type="text" id="product_name" class="form-control" name="product_name" value="<?php echo $name ?>">
 
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label">Price $</label>
+                <label for="product_price" class="col-sm-3 col-form-label">Price $</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="product_price" value="<?php echo $price ?>">
+                    <input type="text" id="product_price" class="form-control" name="product_price" value="<?php echo $price ?>">
 
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label">Quantity</label>
+                <label for="product_qty" class="col-sm-3 col-form-label">Quantity</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="product_qty" value="<?php echo $quantity ?>">
+                    <input type="text" id="product_qty" class="form-control" name="product_qty" value="<?php echo $quantity ?>">
 
                 </div>
                 <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label">Code</label>
+                <label for="pcod" class="col-sm-3 col-form-label">Code</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="product_code" value="<?php echo $code ?>">
+                    <input type="text" id="pcod" class="form-control" name="product_code" value="<?php echo $code ?>">
 
                 </div>
                 <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label">Product_image</label>
+                <label for="pimage" class="col-sm-3 col-form-label">Product_image</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="product_image" value="<?php echo $product_image ?>">
+                    <input type="text" id="pimage" class="form-control" name="product_image" value="<?php echo $product_image ?>">
 
                 </div>
             </div>

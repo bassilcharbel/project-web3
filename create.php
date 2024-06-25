@@ -73,28 +73,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row mb-3">
                 <label for="user" class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="user" value="<?php echo htmlspecialchars($name); ?>">
+                    <input type="text" id="user" class="form-control" name="user" value="<?php echo htmlspecialchars($name); ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="Lname" class="col-sm-3 col-form-label">Last name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="Lname" value="<?php echo htmlspecialchars($Lname); ?>">
+                    <input type="text" id="Lname" class="form-control" name="Lname" value="<?php echo htmlspecialchars($Lname); ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="email" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($email); ?>">
+                    <input type="email" id="email" class="form-control" name="email" value="<?php echo htmlspecialchars($email); ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="password" class="col-sm-3 col-form-label">Password</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" name="password" value="<?php echo htmlspecialchars($password); ?>">
+                    <input type="password" id="password" class="form-control" name="password" value="<?php echo htmlspecialchars($password); ?>">
                 </div>
             </div>
 
