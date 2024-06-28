@@ -101,7 +101,7 @@
                 <td>{$row['product_image']}</td>
                 <td>
                     <a class='btn btn-primary btn-sm' href='editproduct.php?id={$row['id']}'>Edit</a>
-                    <a class='btn btn-danger btn-sm' href='deleteproduct.php?id={$row['id']}'>Delete</a>
+                    <a class='btn btn-danger btn-sm' href='dealeteproduct.php?id={$row['id']}'>Delete</a>
                 </td>
                 </tr>";
             }

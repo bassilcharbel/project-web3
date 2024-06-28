@@ -1,10 +1,10 @@
 <?php
-     $severname = "localhost";
+     $servername = "localhost";
      $username = "root";
      $password = "";
      $database = "cart_s";
  
-     $connection= new mysqli($severname,$username,$password,$database);
+     $connection= new mysqli($servername,$username,$password,$database);
 
 
 $name="";

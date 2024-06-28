@@ -123,12 +123,16 @@
 
 
   <script type="text/javascript">
-  $(document).ready(function() {
+ $(document).ready(function() {
+  // Sending Form data to the server
+  $("#placeOrder").submit(function(e) {
+    e.preventDefault();
 
+    // Get the total amount from the hidden input field
+    let grandTotal = parseFloat($('input[name="grand_total"]').val());
 
-    // Sending Form data to the server
-    $("#placeOrder").submit(function(e) {
-      e.preventDefault();
+    // Check if the cart is empty
+    if (grandTotal > 0) {
       $.ajax({
         url: 'action.php',
         method: 'post',
@@ -137,7 +141,10 @@
           $("#order").html(response);
         }
       });
-    });
+    } else {
+      alert("Your cart is empty. Please add items to your cart before placing an order.");
+    }
+  });
 
     // Load total no.of items added in the cart and display in the navbar
     load_cart_item_number();
