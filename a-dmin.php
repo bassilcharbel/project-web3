@@ -67,126 +67,50 @@
                   <div class="history_lists">
                     <div class="list1">
                       <div class="row">
-                        <h4>History</h4>
-                       <!-- <a href="#">view all</a>
-                        <a href="#">update</a>-->
                       </div>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Dates</th>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Ammount</th>
-                            <th>delete</a></th>
-                            <th>update</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>2, Aug, 2022</td>
-                            <td>Sam Tonny</td>
-                            <td>Premimum</td>
-                            <td>$2000.00</td>
-                            <td><a href="#">delete</a></td>
-                            <td><a href="#">update</a></td>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>29, July, 2022</td>
-                            
-                            <td>Code Info</td>
-                            <td>Silver</td>
-                            <td>$5,000.00</td>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>15, July, 2022</td>
-                          
-                            <td>Jhon David</td>
-                            <td>Startup</td>
-                            <td>$3000.00</td>
-                          </tr>
-                          <tr>
-                            <td>4</td>
-                            <td>5, July, 2022</td>
-                            <td>Salina Gomiz</td>
-                            <td>Premimum</td>
-                            <td>$7000.00</td>
-                          </tr>
-                          <tr>
-                            <td>5</td>
-                            <td>29, June, 2022</td>
-                            <td>Gomiz</td>
-                            <td>Gold</td>
-                            <td>$4000.00</td>
-                          </tr>
-                          <tr>
-                            <td>6</td>
-                            <td>28, June, 2022</td>
-                            <td>Elyana Jhon</td>
-                            <td>Premimum</td>
-                            <td>$2000.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-            
-                    <div class="list2">
-                      <div class="row">
-                        <h4>Documnets</h4>
-                        <a href="#">add</a>
-                      </div>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Title</th>
-                            <th>Type</th>
-                            <th>Uplaoded</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>CNIC</td>
-                            <td>PDF</td>
-                            <td>20</td>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>Passport</td>
-                            <td>PDF</td>
-                            <td>12</td>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>Licence</td>
-                            <td>PDF</td>
-                            <td>9</td>
-                          </tr>
-                          <tr>
-                            <td>4</td>
-                            <td>Pic</td>
-                            <td>Jpg</td>
-                            <td>22</td>
-                          </tr> 
-                          <tr>
-                            <td>5</td>
-                            <td>CNIC</td>
-                            <td>Jpg</td>
-                            <td>22</td>
-                          </tr> 
-                          <tr>
-                            <td>6</td>
-                            <td>Docx</td>
-                            <td>Word</td>
-                            <td>22</td>
-                          </tr> 
-                        </tbody>
-                      </table>
+        <br>
+        <table>
+        <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Amount Paid</th>
+                    <th>Product</th>
+                    <th>Pmode</th>
+                    <th>Address</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            include"config.php";
+
+            $sql = "SELECT * FROM orders";
+            $result = $conn->query($sql);
+
+            if (!$result) {
+                die("Invalid query: " . $conn->error);
+            }
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td>{$row['email']}</td>
+                <td>{$row['phone']}</td>
+                <td>{$row['amount_paid']}</td>
+                <td>{$row['products']}</td>
+                <td>{$row['pmode']}</td>
+                <td>{$row['addres']}</td>
+                <td>
+                    <a class='btn btn-danger btn-sm' href='deleteorder.php?id={$row['id']}'>Delete</a>
+                </td>
+                </tr>";
+            }
+            ?>
+            </tbody>
+        </table>
                     </div>
                   </div>
                 </div>

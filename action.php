@@ -78,7 +78,7 @@
 	  $tprice = $qty * $pprice;
 
 	  $stmt = $conn->prepare('UPDATE cart SET qty=?, total_price=? WHERE id=?');
-	  $stmt->bind_param('isi',$qty,$tprice,$pid);
+	  $stmt->bind_param('idi',$qty,$tprice,$pid);
 	  $stmt->execute();
 	}
 	// Checkout and save customer info in the orders table

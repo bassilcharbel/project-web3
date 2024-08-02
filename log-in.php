@@ -5,7 +5,6 @@ if (isset($_POST['email'], $_POST['pass'])) {
     $email = $_POST['email'];
     $pass = $_POST['pass'];
 
-    // Use prepared statements to avoid SQL injection
     $query = "SELECT email, password, role FROM users WHERE email=? AND password=?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "ss", $email, $pass);
@@ -35,7 +34,6 @@ if (isset($_POST['email'], $_POST['pass'])) {
         }
         exit;
     } else {
-        // Login failed, redirect back to login page
         header("Location: login.html");
         exit;
     }

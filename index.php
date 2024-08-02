@@ -177,7 +177,8 @@ session_start();
                           <p><b>Price: </b><?= number_format($row['product_price'], 2) ?>/-</p>
                           <div class="input-group">
                             <span class="input-group-text">Quantity:</span>
-                            <input type="number" class="form-control pqty" value="<?= $row['product_qty'] ?>">
+                            <input type="number" class="form-control pqty" value="1" min="1" max="<?= $row['product_qty'] ?>" id="quantityInput" onfocus="this.blur()">
+                            
                           </div>
                         </div>
                       </div>
@@ -203,7 +204,27 @@ session_start();
 
         
   <script type="text/javascript">
+  document.getElementById('quantityInput').addEventListener('input', function(event) {
+    // Prevent manual entry, only allow arrow adjustments
+    if (event.inputType === 'insertText' || event.inputType === 'insertFromPaste') {
+        this.value = this.value.replace(/[^0-9]/g, '');
+        this.value = Math.min(Math.max(this.value, this.min), this.max);
+    }
+});
+
+document.getElementById('quantityInput').addEventListener('keydown', function(event) {
+    // Allow arrow keys, backspace, and delete
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'Tab') {
+        return;
+    }
+    // Prevent other keys
+    event.preventDefault();
+});
+  
 $(document).ready(function() {
+    // Load the cart item number as soon as the page is ready
+    load_cart_item_number();
+
     var isLoggedIn = <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === 1 ? 'true' : 'false'; ?>;
     console.log("isLoggedIn:", isLoggedIn);
 
@@ -255,6 +276,7 @@ $(document).ready(function() {
     }
 });
 </script>
+
 
   <!--latest blog-->
  <div class="co--ntainers">

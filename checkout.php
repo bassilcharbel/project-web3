@@ -109,8 +109,8 @@
             <select name="pmode" class="form-control">
               <option value="" selected disabled>-Select Payment Mode-</option>
               <option value="cod">Cash On Delivery</option>
-              <option value="netbanking">Net Banking</option>
-              <option value="cards">Debit/Credit Card</option>
+              <option value="netbanking" disabled>Net Banking</option>
+              <option value="cards" disabled>Debit/Credit Card</option>
             </select>
           </div>
           <div class="form-group">

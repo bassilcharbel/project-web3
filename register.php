@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
     $Lname = cleanInput($_POST['Lname']);
     $email = cleanInput($_POST['email']);
     $confirm_pass = cleanInput($_POST['confirm_pass']);
+    
 
     if ($pass !== $confirm_pass) {
         $_SESSION['error'] = "Error: Passwords do not match.";
