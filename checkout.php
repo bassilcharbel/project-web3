@@ -89,7 +89,7 @@
           <h6 class="lead"><b>Delivery Charge : </b>Free</h6>
           <h5><b>Total Amount Payable : </b><i class="fas fa-dollar-sign"></i> <?= number_format($grand_total,2) ?>/-</h5>
         </div>
-        <form action="" method="post" id="placeOrder">
+        <form action="action.php" method="post" id="placeOrder" >
           <input type="hidden" name="products" value="<?= $allItems; ?>">
           <input type="hidden" name="grand_total" value="<?= $grand_total; ?>">
           <div class="form-group">

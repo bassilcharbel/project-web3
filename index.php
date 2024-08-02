@@ -175,17 +175,31 @@ session_start();
                         <div class="col-md-6">
                           <p><?= $row['product_description'] ?></p>
                           <p><b>Price: </b><?= number_format($row['product_price'], 2) ?>/-</p>
-                          <div class="input-group">
-                            <span class="input-group-text">Quantity:</span>
-                            <input type="number" class="form-control pqty" value="1" min="1" max="<?= $row['product_qty'] ?>" id="quantityInput" onfocus="this.blur()">
-                            
-                          </div>
+                          <?php if ($row['product_qty'] <= 0): ?>
+        <h1 class="text-danger">Out of stock</h1>
+        <div class="input-group">
+          <span class="input-group-text">Quantity:</span>
+          <input type="number" class="form-control pqty" value="0" min="0" disabled>
+        </div>
+      <?php else: ?>
+        <div class="input-group">
+          <span class="input-group-text">Quantity:</span>
+          <input type="number" class="form-control pqty" value="1" min="1" max="<?= $row['product_qty'] ?>" id="quantityInput" onfocus="this.blur()">
+        </div>
+      <?php endif; ?>
                         </div>
                       </div>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button style="background-color:#DC5F00;border-color:#DC5F00;" type="submit" class="btn btn-primary addItemBtn">Add to Cart</button>
+                      <button 
+  style="background-color:#DC5F00;border-color:#DC5F00;width:10%;padding:10px;" 
+  type="submit" 
+  class="btn btn-primary addItemBtn" 
+  <?php if ($row['product_qty'] <= 0): ?>disabled<?php endif; ?>
+>
+  buy
+</button>
                     </div>
                   </div>
                 </div>
